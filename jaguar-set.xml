@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="jaguar-jsbsim-set.xml"> -->
+<PropertyList include="jaguar-yasim-set.xml">
+
+  <sim>
+    <description>Jaguar</description>
+    <author>Emmanuel BARANGER (3D,FDM)</author>
+  </sim>
+
+</PropertyList>
+

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>jaguar.ac</path>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Jaguar/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fuselage</object-name>
+    <object-name>dessus</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>air</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>sorties</object-name>
+    <object-name>roueA</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>volets</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>direction</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>verriere</object-name>
+    <object-name>vitres</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass_shader.png</texture>
+    <object-name>verriere</object-name>
+    <object-name>vitres</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>verriere</object-name>
+    <object-name>vitres</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>dessus</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>air</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>sorties</object-name>
+    <object-name>roueA</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>volets</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>direction</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+<!--
+    <diffuse>
+      <red-prop>diffuse/red</red-prop>
+      <green-prop>diffuse/green</green-prop>
+      <blue-prop>diffuse/blue</blue-prop>
+    </diffuse>
+
+    <ambient>
+      <red-prop>ambient/red</red-prop>
+      <green-prop>ambient/green</green-prop>
+      <blue-prop>ambient/blue</blue-prop>
+    </ambient>
+-->
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+<!--
+    <shininess>
+      <shininess-prop>shininess</shininess-prop>
+    </shininess>
+-->
+  </animation>
+
+  <!-- Interieur -->
+  <model>
+    <name>Pilote</name>
+    <path>Aircraft/Jaguar/Models/Interior/interior.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Les flammes -->
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/Jaguar/Models/flammes/flammesG.xml</path>
+    <offsets>
+      <x-m>  5.561 </x-m>
+      <y-m> -0.483 </y-m>
+      <z-m> -0.572 </z-m>
+    </offsets>
+  </model>
+
+ <!-- Droite -->
+  <model>
+    <path>Aircraft/Jaguar/Models/flammes/flammesD.xml</path>
+    <offsets>
+      <x-m>  5.561 </x-m>
+      <y-m>  0.483 </y-m>
+      <z-m> -0.572 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Rentré des roues Temporairement disparition/apparition des roues -->
+  <animation>
+    <type>select</type>
+    <object-name>roueA</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <condition>
+      <not>
+        <equals>
+          <property>gear/gear[0]/position-norm</property>
+          <value>0</value>
+        </equals>
+      </not>
+    </condition>
+  </animation>
+
+  <!-- Gouverne de direction -->
+  <animation>
+    <type>rotate</type>
+    <object-name>direction</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>15</factor>
+    <axis>
+      <x1-m>  7.033 </x1-m>
+      <y1-m>  0.000 </y1-m>
+      <z1-m>  0.488 </z1-m>
+      <x2-m>  7.515 </x2-m>
+      <y2-m>  0.000 </y2-m>
+      <z2-m>  1.899 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Gouverne de profondeur -->
+  <animation>
+    <type>rotate</type>
+    <object-name>profondeurG</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-8</factor>
+    <axis>
+      <x1-m>  6.433 </x1-m>
+      <y1-m> -0.254 </y1-m>
+      <z1-m>  0.074 </z1-m>
+      <x2-m>  7.548 </x2-m>
+      <y2-m> -2.253 </y2-m>
+      <z2-m> -0.380 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>profondeurD</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-8</factor>
+    <axis>
+      <x1-m>  7.548 </x1-m>
+      <y1-m>  2.253 </y1-m>
+      <z1-m> -0.380 </z1-m>
+      <x2-m>  6.433 </x2-m>
+      <y2-m>  0.254 </y2-m>
+      <z2-m>  0.074 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Animations des ailerons -->
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronG</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind>  0.75 </ind><dep>  0 </dep></entry>
+      <entry><ind>  0.00 </ind><dep>  0 </dep></entry>
+      <entry><ind> -0.75 </ind><dep> 40 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m>  3.075 </x1-m>
+      <y1-m> -2.104 </y1-m>
+      <z1-m> -0.041 </z1-m>
+      <x2-m>  3.696 </x2-m>
+      <y2-m> -3.616 </y2-m>
+      <z2-m> -0.189 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronD</object-name>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind>  0.75 </ind><dep>  0 </dep></entry>
+      <entry><ind>  0.00 </ind><dep>  0 </dep></entry>
+      <entry><ind> -0.75 </ind><dep> 40 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m>  3.696 </x1-m>
+      <y1-m>  3.616 </y1-m>
+      <z1-m> -0.189 </z1-m>
+      <x2-m>  3.075 </x2-m>
+      <y2-m>  2.104 </y2-m>
+      <z2-m> -0.041 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Volets -->
+  <animation>
+    <type>rotate</type>
+    <object-name>voletG</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>-15.0</factor>
+    <axis>
+      <x1-m>  3.454 </x1-m>
+      <y1-m> -2.254 </y1-m>
+      <z1-m> -0.120 </z1-m>
+      <x2-m>  4.175 </x2-m>
+      <y2-m> -4.160 </y2-m>
+      <z2-m> -0.264 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>voletD</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>-15.0</factor>
+    <axis>
+      <x1-m>  4.175 </x1-m>
+      <y1-m>  4.160 </y1-m>
+      <z1-m> -0.264 </z1-m>
+      <x2-m>  3.454 </x2-m>
+      <y2-m>  2.254 </y2-m>
+      <z2-m> -0.120 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>volets</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>40.0</factor>
+    <center>
+      <x-m>  3.335 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.025 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Rotation de la roue avant en fonction de la gouverne de direction -->
+  <animation>
+    <type>rotate</type>
+    <object-name>roueA</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> 30.0 </factor>
+    <center>
+      <x-m> -3.570 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -2.227 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+  </animation>
+
+  <!-- Rotation des roues lors du roulage -->
+  <animation>
+    <type>spin</type>
+    <object-name>roueA</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -3.570 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -2.227 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueG</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m>  2.086 </x-m>
+      <y-m> -1.251 </y-m>
+      <z-m> -2.031 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueD</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m>  2.086 </x-m>
+      <y-m>  1.251 </y-m>
+      <z-m> -2.031 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Canopy -->
+  <animation>
+    <name>Canopy</name>
+    <object-name>tourverriere</object-name>
+    <object-name>verriere</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Canopy</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 60 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -2.148 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.642 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/Jaguar/Models/light/beacon.xml</path>
+    <offsets>
+      <x-m> 7.626 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 2.680 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/light/RedLight.xml</path>
+    <offsets>
+      <x-m>  3.768 </x-m>
+      <y-m> -4.392 </y-m>
+      <z-m> -0.281 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/light/GreenLight.xml</path>
+    <offsets>
+      <x-m>  3.768 </x-m>
+      <y-m>  4.392 </y-m>
+      <z-m> -0.281 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Velocity-XL/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  3.768 </x-m>
+      <y-m> -4.390 </y-m>
+      <z-m> -0.281 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Velocity-XL/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  3.768 </x-m>
+      <y-m>  4.390 </y-m>
+      <z-m> -0.281 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+

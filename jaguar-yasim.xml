@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  Jaguar configuration
+      Envergure      8.69 m  (26 ft 6 in)
+      Longueur      16.83 m  (55 ft 3 in)
+      Hauteur        4.81 m  (16 ft)
+      Masse à vide  7 000 kg (15 400 lbs)
+      Plafond      12 000 m  (
+-->
+
+<airplane mass="15400">
+
+<!-- Approach configuration -->
+  <approach speed="120" aoa="8" fuel="0.2">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.5"/>
+    <control-setting axis="/controls/flight/flaps" value="1.0"/>
+    <control-setting axis="/controls/flight/spoilers" value="0.5"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </approach>
+
+<!-- Cruise configuration -->
+  <cruise speed="750" alt="30000" fuel="0.8">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+  </cruise>
+
+  <cockpit x="3.249" y="0.0" z="-0.085"/>
+
+  <fuselage ax="6.938" ay="0" az="-0.787" bx="-8.025" by="0" bz="0.112" width="1.8" taper="1" midpoint="0.5"/>
+
+  <wing x="-1.390" y="0.462" z="0.173"
+        length="3.818"
+        chord="4.926" 
+        taper="0.21" 
+        incidence="3.3"
+        sweep="18" 
+        dihedral="-6.0"
+        camber="0.01">
+        <stall aoa="20" width="3" peak="1.3"/>
+        <flap0 start="0" end="0.8" lift="1.5" drag="1.3"/>
+        <slat start="0" end="0.8" aoa="30" drag="1.2"/>
+        <flap1 start="0.54" end="0.86" lift="1.3" drag="1.3"/>
+        <spoiler start="0.54" end="0.86" lift="0.0" drag="10.0"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/flaps" control="SLAT"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
+
+        <control-output control="FLAP0" side="left" prop="/surface-positions/left-flap-pos-norm"/>
+        <control-output control="FLAP0" side="right" prop="/surface-positions/right-flap-pos-norm"/>
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        <control-output control="FLAP1" prop="/surface-positions/aileron-pos-norm"/>
+
+        <control-output control="SPOILER" side="left" prop="/surface-positions/left-spoiler-pos-norm"/>
+        <control-output control="SPOILER" side="right" prop="/surface-positions/right-spoiler-pos-norm"/>
+        <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="10"/>
+        <control-speed control="SLAT" transition-time="10"/>
+        <control-speed control="FLAP1" transition-time="0.5"/>
+        <control-speed control="SPOILER" transition-time="0.5"/>
+
+  </wing>
+
+  <hstab x="-6.476" y="0.220" z="0.083" 
+         length="2.109" 
+         chord="2.425" 
+         taper="0.37" 
+         sweep="24" 
+         dihedral="-12"
+         camber="0">
+         <stall aoa="25" width="5" peak="1.3"/>
+         <flap0 start="0" end="1" lift="1.35" drag="1.3"/>
+         <control-input axis="/controls/flight/elevator" control="FLAP0" square="false"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" side="left" prop="surface-positions/left-elevator-pos-norm"/>
+         <control-output control="FLAP0" side="right" prop="surface-positions/right-elevator-pos-norm"/>
+         <control-output control="FLAP0" prop="surface-positions/elevator-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="2"/>
+  </hstab>
+
+  <vstab x="-6.353" y="0" z="0.438"
+         length="2.330" 
+         chord="2.638" 
+         taper="0.26"
+         sweep="16">
+         <stall aoa="16" width="5" peak="1.5"/>
+         <flap0 start="0" end="0.64" lift="1.25" drag="1.2"/>
+         
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+         
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+         <control-speed control="FLAP0" transition-time="1"/>
+  </vstab>
+ 
+  <!-- Adour MK 102 32,5 Kl (7305 lbf) -->
+  <jet x="-2.091" y="0.555" z="-0.334"
+       mass="2118"
+       thrust="7305"
+       afterburner="9000">
+       <actionpt x="-5.561" y="0.483" z="-0.572"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+
+       <control-output control="REHEAT" prop="engines/engine[0]/afterburner" />
+  </jet>
+
+  <!-- Adour MK 102 32,5 Kl (7305 lbf) -->
+  <jet x="-2.091" y="-0.555" z="-0.334"
+       mass="2118"
+       thrust="7305"
+       afterburner="9000">
+       <actionpt x="-5.561" y="-0.483" z="-0.572"/>
+       <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[1]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+
+       <control-output control="REHEAT" prop="engines/engine[1]/afterburner" />
+  </jet>
+
+    <!-- nose -->
+    <gear x="3.570" y="0.000" z="-2.499" 
+          retract-time="7" compression="0.44" spring="1.1" damp="1.4">
+          <control-input axis="/controls/flight/rudder" control="STEER" square="false"/>
+          <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+          <control-speed control="EXTEND" transition-time="7"/>
+          <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+    </gear>
+
+    <!-- left main -->
+    <gear x="-2.086" y="1.251" z="-2.353"
+        retract-time="7" compression="0.72" spring="0.85" damp="2">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
+    </gear>
+
+    <!-- right main -->
+    <gear x="-2.086" y="-1.251" z="-2.353"
+        retract-time="7" compression="0.72" spring="0.85" damp="2">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
+    </gear>
+
+  <!-- Internal tanks -->
+  <tank x="2.8" y="0.0" z="0.63" jet="true" capacity="9016"/>
+
+</airplane>

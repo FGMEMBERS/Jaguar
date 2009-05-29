@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+ 
+    <author>BARANGER Emmanuel</author>
+    <aircraft-version>0.2</aircraft-version>
+    <status>0.1 Alpha</status>
+   
+    <fuel-fraction>0.75</fuel-fraction>
+  
+    <startup>
+      <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/Jaguar/Models/jaguar.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <help>
+      <title>Jaguar</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+    </help>
+  
+    <weight n="0">
+      <name>Crew</name>
+      <weight-lb>180</weight-lb> 
+      <max-lb>400</max-lb>
+      <min-lb>180</min-lb>
+    </weight>
+
+    <replay>
+      <disable>1</disable>
+    </replay>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+    </multiplay>
+
+    <menubar include="Dialogs/jaguar-menu.xml"/>
+
+  </sim>
+
+  <environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <running>true</running>
+    </engine>
+  </engines>
+
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">2070</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <input>
+    <keyboard include="Nasal/jaguar-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <doors>
+      <file>Aircraft/Jaguar/Nasal/doors.nas</file>
+    </doors>
+    <jaguar>
+      <file>Aircraft/Jaguar/Nasal/light.nas</file>
+      <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
+    </jaguar>
+  </nasal>
+
+</PropertyList>
