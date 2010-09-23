@@ -17,7 +17,7 @@
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
-    <texture>shader.png</texture>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>intverriere</object-name>
     <object-name>intvitres</object-name>
   </animation>
@@ -38,6 +38,26 @@
     </offsets>
   </model>
 
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/divers/stick.xml</path>
+    <offsets>
+      <x-m> -3.25 </x-m>
+      <y-m> -00 </y-m>
+      <z-m> -0.45 </z-m>
+      <pitch-deg>-0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/divers/pedals.xml</path>
+    <offsets>
+      <x-m> -3.6 </x-m>
+      <y-m> -00 </y-m>
+      <z-m> -0.50 </z-m>
+      <pitch-deg>-0</pitch-deg>
+    </offsets>
+  </model>
+  
   <!-- Pilote -->
   <model>
     <name>Pilote</name>
@@ -45,7 +65,7 @@
     <offsets>
       <x-m> -2.736 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -0.096 </z-m>
+      <z-m> -0.097 </z-m>
     </offsets>
   </model>
 

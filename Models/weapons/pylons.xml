@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>Aircraft/Jaguar/Models/weapons/pylons.ac</path>
+ <animation>
+    <object-name>pylon4.L</object-name>
+    <object-name>pylon3.L</object-name>
+    <object-name>pylon1.L</object-name>
+    <object-name>pylon.C</object-name>
+    <object-name>pylon1.R</object-name>
+    <object-name>pylon3.R</object-name>
+    <object-name>pylon4.R</object-name>
+  </animation>
+
+ 
+
+
+</PropertyList>

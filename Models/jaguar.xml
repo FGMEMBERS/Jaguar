@@ -42,20 +42,6 @@
   </animation>
 
   <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>glass_shader.png</texture>
-    <object-name>verriere</object-name>
-    <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>verriere</object-name>
-    <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
@@ -112,9 +98,241 @@
 -->
   </animation>
 
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>dessus</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>air</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>sorties</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>volets</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>direction</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>verriere</object-name>
+    <object-name>vitres</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>verriere</object-name>
+    <object-name>vitres</object-name>
+  </animation>
+
+  <!-- Armament -->
+  <!-- pylons -->
+  <model>
+    <name>pylons</name>
+    <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
+    <animation>
+      <object-name>pylon4.L</object-name>
+      <object-name>pylon3.L</object-name>
+      <object-name>pylon1.L</object-name>
+      <object-name>pylon.C</object-name>
+      <object-name>pylon1.R</object-name>
+      <object-name>pylon3.R</object-name>
+      <object-name>pylon4.R</object-name>
+    </animation>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+      <pitch-deg> 0 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- station left 3 -->
+  <animation>
+    <type>select</type>
+    <object-name>pylon3.L</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[2]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <model>
+    <name>left Tank</name>
+    <path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
+      <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> -1.740 </y-m>
+      <z-m> -0.490 </z-m>
+      <pitch-deg> -1.74 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left Tank</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>1000 l Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>left GBU pos 3</name>
+    <path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> -1.740 </y-m>
+      <z-m> -0.430 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left GBU pos 3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>GBU-16</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>  
+
+  <!-- center station -->
+  <animation>
+    <type>select</type>
+    <object-name>pylon.C</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[4]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <model>
+    <name>center tank</name>
+    <path>Aircraft/Jaguar/Models/weapons/tank1000.ac</path>
+    <offsets>
+      <x-m>  1.600 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.420 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>center tank</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[4]/selected</property>
+          <value>1000 l Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[4]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>			
+
+  <!-- station right 3 -->
+  <animation>
+    <type>select</type>
+    <object-name>pylon3.R</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[6]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <model>
+    <name>right Tank</name>
+    <path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m>  1.740 </y-m>
+      <z-m> -0.490 </z-m>
+      <pitch-deg>-1.74</pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>right Tank</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[6]/selected</property>
+          <value>1000 l Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[6]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+	
+  <model>
+    <name>right GBU pos 3</name>
+    <path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m>  1.740 </y-m>
+      <z-m> -0.430 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>right GBU pos 3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[6]/selected</property>
+          <value>GBU-16</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[6]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	 
+
   <!-- Interieur -->
   <model>
-    <name>Pilote</name>
     <path>Aircraft/Jaguar/Models/Interior/interior.xml</path>
     <offsets>
       <x-m> 0 </x-m>
@@ -123,10 +341,62 @@
     </offsets>
   </model>
 
+  <!-- Effets sur le sol -->
+  <!-- Roue avant -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -3.570 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -2.499 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m>  2.086 </x-m>
+      <y-m> -1.251 </y-m>
+      <z-m> -2.353 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m>  2.086 </x-m>
+      <y-m>  1.251 </y-m>
+      <z-m> -2.353 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Poussière -->
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/smoke/smokeL.xml</path>
+    <offsets>
+      <x-m>  5.561 </x-m>
+      <y-m> -0.483 </y-m>
+      <z-m> -0.572 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/smoke/smokeR.xml</path>
+    <offsets>
+      <x-m>  5.561 </x-m>
+      <y-m>  0.483 </y-m>
+      <z-m> -0.572 </z-m>
+    </offsets>
+  </model>
+
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Jaguar/Models/flammes/flammesG.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/flammes/flammesG.xml</path>
     <offsets>
       <x-m>  5.561 </x-m>
       <y-m> -0.483 </y-m>
@@ -136,7 +406,47 @@
 
  <!-- Droite -->
   <model>
-    <path>Aircraft/Jaguar/Models/flammes/flammesD.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/flammes/flammesD.xml</path>
+    <offsets>
+      <x-m>  5.561 </x-m>
+      <y-m>  0.483 </y-m>
+      <z-m> -0.572 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m>  4.332 </x-m>
+      <y-m> -4.267 </y-m>
+      <z-m> -0.270 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m>  4.332 </x-m>
+      <y-m>  4.267 </y-m>
+      <z-m> -0.270 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/trail/trailL.xml</path>
+    <offsets>
+      <x-m>  5.561 </x-m>
+      <y-m> -0.483 </y-m>
+      <z-m> -0.572 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Jaguar/Models/Effects/trail/trailR.xml</path>
     <offsets>
       <x-m>  5.561 </x-m>
       <y-m>  0.483 </y-m>
@@ -164,8 +474,8 @@
   <animation>
     <type>rotate</type>
     <object-name>direction</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -15 </factor>
     <axis>
       <x1-m>  7.033 </x1-m>
       <y1-m>  0.000 </y1-m>
@@ -180,7 +490,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeurG</object-name>
-    <property>controls/flight/elevator</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor>-8</factor>
     <axis>
       <x1-m>  6.433 </x1-m>
@@ -195,7 +505,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeurD</object-name>
-    <property>controls/flight/elevator</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor>-8</factor>
     <axis>
       <x1-m>  7.548 </x1-m>
@@ -298,8 +608,8 @@
   <animation>
     <type>rotate</type>
     <object-name>roueA</object-name>
-    <property>controls/flight/rudder</property>
-    <factor> 30.0 </factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -30 </factor>
     <center>
       <x-m> -3.570 </x-m>
       <y-m>  0.000 </y-m>
@@ -393,16 +703,26 @@
 
   <!-- Ajout des effets lumineux -->
   <model>
-    <path>Aircraft/Jaguar/Models/light/beacon.xml</path>
+    <path>Aircraft/Jaguar/Models/lights/beacon.xml</path>
     <offsets>
-      <x-m> 7.626 </x-m>
+      <x-m> 1.3 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> 2.680 </z-m>
+      <z-m> 0.680 </z-m>
     </offsets>
   </model>
 
+<model>
+    <path>Aircraft/Jaguar/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> 3.626 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> -1.13 </z-m>
+    </offsets>
+  </model>
+
+
   <model>
-    <path>Aircraft/Jaguar/Models/light/RedLight.xml</path>
+    <path>Aircraft/Jaguar/Models/lights/RedLight.xml</path>
     <offsets>
       <x-m>  3.768 </x-m>
       <y-m> -4.392 </y-m>
@@ -410,8 +730,9 @@
     </offsets>
   </model>
 
+
   <model>
-    <path>Aircraft/Jaguar/Models/light/GreenLight.xml</path>
+    <path>Aircraft/Jaguar/Models/lights/GreenLight.xml</path>
     <offsets>
       <x-m>  3.768 </x-m>
       <y-m>  4.392 </y-m>
@@ -420,7 +741,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Velocity-XL/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Jaguar/Models/lights/StrobeWhite.xml</path>
     <offsets>
       <x-m>  3.768 </x-m>
       <y-m> -4.390 </y-m>
@@ -429,7 +750,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Velocity-XL/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Jaguar/Models/lights/StrobeWhite.xml</path>
     <offsets>
       <x-m>  3.768 </x-m>
       <y-m>  4.390 </y-m>

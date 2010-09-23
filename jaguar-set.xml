@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- <PropertyList include="jaguar-jsbsim-set.xml"> -->
-<PropertyList include="jaguar-yasim-set.xml">
+<!-- <PropertyList include="jaguar-jsbsim-cnf.xml"> -->
+<PropertyList include="jaguar-yasim-cnf.xml">
 
   <sim>
-    <description>Jaguar</description>
-    <author>Emmanuel BARANGER (3D,FDM)</author>
+
+    <author>BARANGER Emmanuel, StuartC</author>
+    <aircraft-version>0.2</aircraft-version>
+    <status>2.4 Alpha</status>
+  
   </sim>
 
 </PropertyList>

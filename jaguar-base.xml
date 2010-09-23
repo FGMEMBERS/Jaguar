@@ -4,19 +4,11 @@
 
   <sim include="Nasal/views.xml">
  
-    <author>BARANGER Emmanuel</author>
-    <aircraft-version>0.2</aircraft-version>
-    <status>0.1 Alpha</status>
-   
-    <fuel-fraction>0.75</fuel-fraction>
-  
-    <startup>
-      <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
-    </startup>
+    <description>Jaguar (YASim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>jaguar-yasim</aero>
 
-    <sound>
-      <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
-    </sound>
+    <fuel-fraction>0.75</fuel-fraction>
 
     <model>
       <path>Aircraft/Jaguar/Models/jaguar.xml</path>
@@ -25,14 +17,65 @@
       </livery>
     </model>
 
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
+    </submodels>
+
+    <startup>
+      <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
+    </sound>
+
     <help>
       <title>Jaguar</title>
       <key>
         <name>d</name>
         <desc>Open/Close canopy</desc>
       </key>
+      <line>Afterburners engage when</line>
+      <line>throttle moves past 75%</line>
     </help>
   
+    <systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+      <autopilot>
+        <path>Aircraft/Jaguar/System/jag-autopilot.xml</path>
+      </autopilot>
+    </systems> 
+
+    <!-- set up control properties for YASim -->
+    <controls>
+      <armament>
+        <station n="0">
+          <release type="bool">false</release>
+        </station>
+        <station n="1">
+          <release type="bool">false</release>
+        </station>
+        <station n="2">
+          <release type="bool">false</release>
+        </station>
+        <station n="3">
+          <release type="bool">false</release>
+        </station>
+        <station n="4">
+          <release type="bool">false</release>
+        </station>
+        <station n="5">
+          <release type="bool">false</release>
+        </station>
+        <station n="6">
+          <release type="bool">false</release>
+        </station>
+      </armament>
+    </controls>
+
     <weight n="0">
       <name>Crew</name>
       <weight-lb>180</weight-lb> 
@@ -40,12 +83,146 @@
       <min-lb>180</min-lb>
     </weight>
 
+    <weight n="1">
+      <name>pylon1.L</name>
+      <tank>7</tank>
+      <weight-lb>0</weight-lb>
+      <selected type="bool">true</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>1000 l Droptank</name>
+        <lbs>2204.0</lbs>
+      <gals>396</gals>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="2">
+    <name>pylon3.L</name>
+    <weight-lb>0</weight-lb>
+    <selected type="bool">true</selected>
+    <opt>
+    <name>none</name>
+    <lbs>0</lbs>
+    </opt>
+    <opt>
+    <name>AIM-9 Sidewinder</name>
+    <lbs>190.0</lbs>
+    </opt>
+    <opt>
+    <name>GBU-16</name>
+    <lbs>1094.0</lbs>
+    </opt>
+    </weight>
+
+    <weight n="3">
+    <name>pylon4.L</name>
+    <weight-lb>0</weight-lb>
+    <selected>none</selected>
+    <opt>
+    <name>none</name>
+    <lbs>0</lbs>
+    </opt>
+    <opt>
+    <name>AIM-9 Sidewinder</name>
+    <lbs>190.0</lbs>
+    </opt>
+    </weight>
+
+    <weight n="4">
+    <name>pylon.C</name>
+    <tank>6</tank>
+    <weight-lb>0</weight-lb>
+    <selected>none</selected>
+    <opt>
+    <name>none</name>
+    <lbs>0</lbs>
+    </opt>
+    <opt>
+    <name>1000 Droptank</name>
+    <lbs>2204.0</lbs>
+    <gals>211</gals>
+    </opt>
+    </weight>
+
+    <weight n="5">
+    <name>pylon4.R</name>
+    <weight-lb>0</weight-lb>
+    <selected type="bool">true</selected>
+    <opt>
+    <name>none</name>
+    <lbs>0</lbs>
+    </opt>
+    <opt>
+    <name>AIM-9 Sidewinder</name>
+    <lbs>190.0</lbs>
+    </opt>
+    </weight>
+
+    <weight n="6">
+    <name>pylon3.R</name>
+    <weight-lb>0</weight-lb>
+    <selected>none</selected>
+    <opt>
+    <name>none</name>
+    <lbs>0</lbs>
+    </opt>
+    <opt>
+    <name>AIM-9 Sidewinder</name>
+    <lbs>190.0</lbs>
+    </opt>
+    <opt>
+    <name>GBU-16</name>
+    <lbs>1094.0</lbs>
+    </opt>
+    </weight>
+
+    <weight n="7">
+      <name>pylon1.R</name>
+      <tank>8</tank>
+      <weight-lb>0</weight-lb>
+      <selected type="bool">true</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+      <opt>
+        <name>1000 l Droptank</name>
+        <lbs>2204.0</lbs>
+        <gals>396</gals>
+      </opt>
+    </weight>
+
+    <current-view>
+      <field-of-view>86.3</field-of-view>
+    </current-view>
+
     <replay>
       <disable>1</disable>
     </replay>
 
     <multiplay>
       <chat_display>1</chat_display>
+      <generic>
+        <int type="int" n="0"> 0 </int>
+        <int type="int" n="1"> 0 </int>
+        <int type="int" n="2"> 0 </int>
+        <int type="int" n="3"> 0 </int>
+        <int type="int" n="4"> 0 </int>
+        <int type="int" n="5"> 0 </int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
     </multiplay>
 
     <menubar include="Dialogs/jaguar-menu.xml"/>
@@ -61,23 +238,55 @@
   <engines>
     <engine n="0">
       <engine-num type="int">0</engine-num>
-      <running>true</running>
+      <running>false</running>
+    </engine>
+    <engine n="2">
+      <engine-num type="int">1</engine-num>
+      <running>false</running>
     </engine>
   </engines>
-
-  <consumables>
-    <fuel>
-      <tank n="0">
-        <tank-num type="int">0</tank-num>
-        <level-gal_us archive="y">2070</level-gal_us>
-      </tank>
-    </fuel>
-  </consumables>
 
   <input>
     <keyboard include="Nasal/jaguar-keyboard.xml"/>
   </input>
  
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">2200</level-gal_us>
+      </tank>
+      <tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">2200</level-gal_us>
+      </tank>
+      <tank n="2">
+        <tank-num type="int">2</tank-num>
+        <level-gal_us archive="y">1031</level-gal_us>
+      </tank>
+      <tank n="3">
+        <tank-num type="int">3</tank-num>
+        <level-gal_us archive="y">1031</level-gal_us>
+      </tank>
+      <tank n="4">
+        <tank-num type="int">4</tank-num>
+        <level-gal_us archive="y">1031</level-gal_us>
+      </tank>
+      <tank n="5">
+        <name>centerline Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="6">
+        <name>left wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="7">
+        <name>right wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+    </fuel>
+  </consumables>
+
   <nasal>
     <doors>
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
@@ -85,6 +294,8 @@
     <jaguar>
       <file>Aircraft/Jaguar/Nasal/light.nas</file>
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
+      <file>Aircraft/Jaguar/Nasal/doors.nas</file>
+      <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
     </jaguar>
   </nasal>
 
