@@ -47,6 +47,11 @@
       <autopilot>
         <path>Aircraft/Jaguar/System/jag-autopilot.xml</path>
       </autopilot>
+	<refuel>
+	<type>probe</type>
+      <serviceable type="bool">true</serviceable>
+    </refuel>
+
     </systems> 
 
     <!-- set up control properties for YASim -->
@@ -77,14 +82,39 @@
     </controls>
 
     <weight n="0">
-      <name>Crew</name>
-      <weight-lb>180</weight-lb> 
-      <max-lb>400</max-lb>
-      <min-lb>180</min-lb>
+      <name>pylon1.L</name> 
+      <weight-lb>0</weight-lb>
+      <selected type="bool">true</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
     </weight>
 
     <weight n="1">
-      <name>pylon1.L</name>
+      <name>pylon4.L</name>
+      <weight-lb></weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="2">
+      <name>pylon3.L</name>
       <tank>7</tank>
       <weight-lb>0</weight-lb>
       <selected type="bool">true</selected>
@@ -103,91 +133,27 @@
       </opt>
     </weight>
 
-    <weight n="2">
-    <name>pylon3.L</name>
-    <weight-lb>0</weight-lb>
-    <selected type="bool">true</selected>
-    <opt>
-    <name>none</name>
-    <lbs>0</lbs>
-    </opt>
-    <opt>
-    <name>AIM-9 Sidewinder</name>
-    <lbs>190.0</lbs>
-    </opt>
-    <opt>
-    <name>GBU-16</name>
-    <lbs>1094.0</lbs>
-    </opt>
-    </weight>
-
     <weight n="3">
-    <name>pylon4.L</name>
-    <weight-lb>0</weight-lb>
-    <selected>none</selected>
-    <opt>
-    <name>none</name>
-    <lbs>0</lbs>
-    </opt>
-    <opt>
-    <name>AIM-9 Sidewinder</name>
-    <lbs>190.0</lbs>
-    </opt>
+      <name>pylon.C</name>
+      <tank>6</tank>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>1000 Droptank</name>
+        <lbs>2204.0</lbs>
+        <gals>211</gals>
+      </opt>
     </weight>
 
     <weight n="4">
-    <name>pylon.C</name>
-    <tank>6</tank>
-    <weight-lb>0</weight-lb>
-    <selected>none</selected>
-    <opt>
-    <name>none</name>
-    <lbs>0</lbs>
-    </opt>
-    <opt>
-    <name>1000 Droptank</name>
-    <lbs>2204.0</lbs>
-    <gals>211</gals>
-    </opt>
-    </weight>
-
-    <weight n="5">
-    <name>pylon4.R</name>
-    <weight-lb>0</weight-lb>
-    <selected type="bool">true</selected>
-    <opt>
-    <name>none</name>
-    <lbs>0</lbs>
-    </opt>
-    <opt>
-    <name>AIM-9 Sidewinder</name>
-    <lbs>190.0</lbs>
-    </opt>
-    </weight>
-
-    <weight n="6">
-    <name>pylon3.R</name>
-    <weight-lb>0</weight-lb>
-    <selected>none</selected>
-    <opt>
-    <name>none</name>
-    <lbs>0</lbs>
-    </opt>
-    <opt>
-    <name>AIM-9 Sidewinder</name>
-    <lbs>190.0</lbs>
-    </opt>
-    <opt>
-    <name>GBU-16</name>
-    <lbs>1094.0</lbs>
-    </opt>
-    </weight>
-
-    <weight n="7">
-      <name>pylon1.R</name>
+      <name>pylon3.R</name>
       <tank>8</tank>
       <weight-lb>0</weight-lb>
-      <selected type="bool">true</selected>
+      <selected>none</selected>
       <opt>
         <name>none</name>
         <lbs>0</lbs>
@@ -201,6 +167,44 @@
         <lbs>2204.0</lbs>
         <gals>396</gals>
       </opt>
+    </weight>
+
+    <weight n="5">
+      <name>pylon4.R</name>
+      <weight-lb>0</weight-lb>
+      <selected type="bool">true</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="6">
+      <name>pylon1.R</name>
+      <weight-lb>0</weight-lb>
+      <selected type="bool">true</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt><opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16</name>
+        <lbs>1094.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="7">
+      <name>Crew</name>
+      <weight-lb>180</weight-lb> 
+      <max-lb>400</max-lb>
+      <min-lb>180</min-lb>
     </weight>
 
     <current-view>
@@ -297,6 +301,10 @@
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
     </jaguar>
+    <aar> 
+      <file>Aircraft/Generic/aar.nas</file>
+    </aar>
+
   </nasal>
 
 </PropertyList>

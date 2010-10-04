@@ -5,8 +5,8 @@ OBJECT world
 kids 7
 OBJECT poly
 name "pylon.C"
-data 8
-Cube.007
+data 7
+pylon.c
 texture "pylons.png"
 texrep 1 1
 crease 30.000000

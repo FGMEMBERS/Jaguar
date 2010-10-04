@@ -133,7 +133,7 @@
        mass="1784"
        thrust="6000"
        afterburner="8430"
-       n1-idle="10" 
+       n1-idle="1" 
        n1-max="120" >
        <actionpt x="-5.561" y="0.483" z="-0.572"/>
        <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
@@ -147,7 +147,7 @@
        mass="1784"
        thrust="6000"
        afterburner="8430"
-       n2-idle="10" 
+       n2-idle="1" 
        n2-max="120" >
        <actionpt x="-5.561" y="-0.483" z="-0.572"/>
        <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
@@ -161,7 +161,8 @@
         compression="0.4"
         spring="1.0"
         sfric="2.6"
-        damp="1.50">
+        damp="1.50"
+dfric="1.9">
         <control-input axis="/controls/flight/rudder" control="STEER" square="false"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
 

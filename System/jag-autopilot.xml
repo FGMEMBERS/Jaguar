@@ -411,23 +411,23 @@
     <name>Altitude Hold (Altimeter based) Stage 1</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/altitude</prop>
+      <prop>autopilot/locks/altitude</prop>
       <value>altitude-hold</value>
     </enable>
     <input>
-      <prop>/position/altitude-ft</prop>
+      <prop>position/altitude-ft</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-altitude-ft</prop>
+      <prop>autopilot/settings/target-altitude-ft</prop>
     </reference>
     <output>
-      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+      <prop>autopilot/internal/target-climb-rate-fps</prop>
     </output>
     <config>
-      <Kp>1.25</Kp>          <!-- proportional gain -->
+      <Kp>0.15</Kp>          <!-- proportional gain -->
       <Ki>0.0</Ki>          <!-- integral gain -->
-      <u_min>-36.67</u_min> <!-- minimum output clamp -->
-      <u_max>45.33</u_max>   <!-- maximum output clamp -->
+      <u_min>-100</u_min> <!-- minimum output clamp -->
+      <u_max>100</u_max>   <!-- maximum output clamp -->
     </config>
   </pi-simple-controller>
 
@@ -436,30 +436,31 @@
     <name>Altitude Hold (Altimeter based) Stage 2</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/altitude</prop>
+      <prop>autopilot/locks/altitude</prop>
       <value>altitude-hold</value>
     </enable>
     <input>
-      <prop>/velocities/vertical-speed-fps</prop>
+      <prop>velocities/vertical-speed-fps</prop>
     </input>
     <reference>
-      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+      <prop>autopilot/internal/target-climb-rate-fps</prop>
     </reference>
     <output>
-      <prop>/controls/flight/elevator-trim</prop>
+      <prop>controls/flight/elevator-trim</prop>
     </output>
     <config>
-	    <Kp>-0.0025</Kp>      <!-- proportional gain -0.01 -->
+      <Kp>-0.005</Kp>      <!-- proportional gain -->
       <beta>1.0</beta>    <!-- input value weighing factor -->
       <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
       <gamma>0.0</gamma>  <!-- input value weighing factor for -->
                           <!-- unfiltered derivative error -->
-      <Ti>10.0</Ti>       <!-- integrator time  10.0 -->
-      <Td>0.00001</Td>    <!-- derivator time -->
-      <u_min>-2.5</u_min> <!-- minimum output clamp -->
-      <u_max>2.5</u_max>  <!-- maximum output clamp -->
+      <Ti>1.0</Ti>       <!-- integrator time -->
+      <Td>.001</Td>    <!-- derivator time -->
+      <u_min>-1.0</u_min> <!-- minimum output clamp -->
+      <u_max>1.0</u_max>  <!-- maximum output clamp -->
     </config>
   </pid-controller>
+
 
   <!-- AGL hold.  2 stage cascade controller. -->
 

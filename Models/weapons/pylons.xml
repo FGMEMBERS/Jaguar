@@ -2,8 +2,14 @@
 
 <PropertyList>
 
-  <path>Aircraft/Jaguar/Models/weapons/pylons.ac</path>
- <animation>
+  <path>Aircraft/Jaguar/Models/weapons/centre.ac</path>
+  <path>Aircraft/Jaguar/Models/weapons/pylonl1.ac</path>
+  <path>Aircraft/Jaguar/Models/weapons/pylonl3.ac</path>
+  <path>Aircraft/Jaguar/Models/weapons/pylonl4.ac</path>
+  <path>Aircraft/Jaguar/Models/weapons/pylonr1.ac</path>
+  <path>Aircraft/Jaguar/Models/weapons/pylonr3.ac</path>
+  <path>Aircraft/Jaguar/Models/weapons/pylonr4.ac</path>
+  <animation>
     <object-name>pylon4.L</object-name>
     <object-name>pylon3.L</object-name>
     <object-name>pylon1.L</object-name>
@@ -12,8 +18,5 @@
     <object-name>pylon3.R</object-name>
     <object-name>pylon4.R</object-name>
   </animation>
-
- 
-
 
 </PropertyList>
