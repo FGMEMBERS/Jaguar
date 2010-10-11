@@ -13,7 +13,7 @@ data 9
 avantbras
 texture "fighter_pilot.png"
 texrep 1 1
-crease 30.000000
+crease 180.000000
 numvert 73
 -0.059181 0.036201 0.313227
 -0.113881 0.024501 0.332227
@@ -888,7 +888,7 @@ data 4
 bras
 texture "fighter_pilot.png"
 texrep 1 1
-crease 30.000000
+crease 180.000000
 numvert 50
 0.103411 0.260042 0.242201
 0.073111 0.202642 0.181301
@@ -1524,7 +1524,7 @@ data 5
 corps
 texture "fighter_pilot.png"
 texrep 1 1
-crease 30.000000
+crease 180.000000
 numvert 847
 0.004538 0.330933 -0.021096
 0.025638 0.339633 -0.033896
@@ -8043,7 +8043,7 @@ data 8
 lunettes
 texture "transp.png"
 texrep 1 1
-crease 30.000000
+crease 180.000000
 numvert 48
 -0.009881 0.507019 -0.07353
 -0.021292 0.532404 -0.064028
@@ -8332,7 +8332,7 @@ data 4
 main
 texture "fighter_pilot.png"
 texrep 1 1
-crease 30.000000
+crease 180.000000
 numvert 130
 -0.378101 0.102577 0.254127
 -0.333605 0.094214 0.291127
@@ -8610,6 +8610,7 @@ refs 3
 45 0.560800015926 0.601300001144
 44 0.571600019932 0.614400029182
 SURF 0x10
+
 mat 1
 refs 3
 49 0.538900017738 0.633400022984
@@ -11964,7 +11965,7 @@ data 4
 tete
 texture "fighter_pilot.png"
 texrep 1 1
-crease 30.000000
+crease 180.000000
 numvert 790
 0.07138 0.46623 0.07195
 0.082896 0.472449 0.07308

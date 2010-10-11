@@ -19,6 +19,7 @@
 
     <submodels> 
       <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Jaguar/Models/Effects/guns/submodels.xml</path>
       <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
     </submodels>
 
@@ -36,10 +37,28 @@
         <name>d</name>
         <desc>Open/Close canopy</desc>
       </key>
+      <key>
+        <name>e</name>
+        <desc>Guns fire</desc>
+      </key>
       <line>Afterburners engage when</line>
       <line>throttle moves past 75%</line>
     </help>
   
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int" n="0"> 0 </int>
+        <int type="int" n="1"> 0 </int>
+        <int type="int" n="2"> 0 </int>
+        <int type="int" n="3"> 0 </int>
+        <int type="int" n="4"> 0 </int>
+        <int type="int" n="5"> 0 </int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
     <systems>
       <electrical>
         <path>Aircraft/Generic/generic-electrical.xml</path>
@@ -47,11 +66,10 @@
       <autopilot>
         <path>Aircraft/Jaguar/System/jag-autopilot.xml</path>
       </autopilot>
-	<refuel>
-	<type>probe</type>
-      <serviceable type="bool">true</serviceable>
-    </refuel>
-
+      <refuel>
+        <type>probe</type>
+        <serviceable type="bool">true</serviceable>
+      </refuel>
     </systems> 
 
     <!-- set up control properties for YASim -->
@@ -215,20 +233,6 @@
       <disable>1</disable>
     </replay>
 
-    <multiplay>
-      <chat_display>1</chat_display>
-      <generic>
-        <int type="int" n="0"> 0 </int>
-        <int type="int" n="1"> 0 </int>
-        <int type="int" n="2"> 0 </int>
-        <int type="int" n="3"> 0 </int>
-        <int type="int" n="4"> 0 </int>
-        <int type="int" n="5"> 0 </int>
-        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
-      </generic>
-    </multiplay>
-
     <menubar include="Dialogs/jaguar-menu.xml"/>
 
   </sim>
@@ -301,10 +305,13 @@
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
     </jaguar>
+    <guns>
+      <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
+      <file>Aircraft/Jaguar/Nasal/revi.nas</file>
+    </guns>
     <aar> 
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
-
   </nasal>
 
 </PropertyList>
