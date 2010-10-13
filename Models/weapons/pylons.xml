@@ -2,21 +2,103 @@
 
 <PropertyList>
 
-  <path>Aircraft/Jaguar/Models/weapons/centre.ac</path>
-  <path>Aircraft/Jaguar/Models/weapons/pylonl1.ac</path>
-  <path>Aircraft/Jaguar/Models/weapons/pylonl3.ac</path>
-  <path>Aircraft/Jaguar/Models/weapons/pylonl4.ac</path>
-  <path>Aircraft/Jaguar/Models/weapons/pylonr1.ac</path>
-  <path>Aircraft/Jaguar/Models/weapons/pylonr3.ac</path>
-  <path>Aircraft/Jaguar/Models/weapons/pylonr4.ac</path>
+  <path>pylons.ac</path>
   <animation>
-    <object-name>pylon4.L</object-name>
-    <object-name>pylon3.L</object-name>
     <object-name>pylon1.L</object-name>
+    <object-name>pylon2.L</object-name>
+    <object-name>pylon3.L</object-name>
     <object-name>pylon.C</object-name>
-    <object-name>pylon1.R</object-name>
     <object-name>pylon3.R</object-name>
-    <object-name>pylon4.R</object-name>
+    <object-name>pylon2.R</object-name>
+    <object-name>pylon1.R</object-name>
+  </animation>
+
+  <!-- pylon options -->
+  <!--
+                 (0)             (6) 
+                 1.L     /-\     1.R
+         _________|_____/top\_____|_________
+            |     |     \___/     |    |  
+           2.L   3.L      |      3.R  2.R
+           (1)   (2)   Center    (4)  (5)
+                         (3) 
+  -->
+  <!--station left 1 -->
+  <animation>
+    <type>select</type>
+    <object-name>pylon1.L</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[0]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>pylon2.L</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[1]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>pylon3.L</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[2]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>pylon.C</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[3]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>pylon3.R</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[4]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>pylon2.R</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[5]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>pylon1.R</object-name>      
+    <condition>
+      <not-equals>
+        <property>sim/weight[6]/selected</property>
+        <value>none</value>
+      </not-equals>
+    </condition>
   </animation>
 
 </PropertyList>

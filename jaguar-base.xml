@@ -72,37 +72,19 @@
       </refuel>
     </systems> 
 
-    <!-- set up control properties for YASim -->
-    <controls>
-      <armament>
-        <station n="0">
-          <release type="bool">false</release>
-        </station>
-        <station n="1">
-          <release type="bool">false</release>
-        </station>
-        <station n="2">
-          <release type="bool">false</release>
-        </station>
-        <station n="3">
-          <release type="bool">false</release>
-        </station>
-        <station n="4">
-          <release type="bool">false</release>
-        </station>
-        <station n="5">
-          <release type="bool">false</release>
-        </station>
-        <station n="6">
-          <release type="bool">false</release>
-        </station>
-      </armament>
-    </controls>
-
+  <!--
+                 (0)             (6) 
+                 1.L     /-\     1.R
+         _________|_____/top\_____|_________
+            |     |     \___/     |    |  
+           2.L   3.L      |      3.R  2.R
+           (1)   (2)   Center    (4)  (5)
+                         (3) 
+  -->
     <weight n="0">
-      <name>pylon1.L</name> 
+      <name>pylon1.L</name>
       <weight-lb>0</weight-lb>
-      <selected type="bool">true</selected>
+      <selected>none</selected>
       <opt>
         <name>none</name>
         <lbs>0</lbs>
@@ -114,8 +96,8 @@
     </weight>
 
     <weight n="1">
-      <name>pylon4.L</name>
-      <weight-lb></weight-lb>
+      <name>pylon2.L</name>
+      <weight-lb>0</weight-lb>
       <selected>none</selected>
       <opt>
         <name>none</name>
@@ -135,7 +117,7 @@
       <name>pylon3.L</name>
       <tank>7</tank>
       <weight-lb>0</weight-lb>
-      <selected type="bool">true</selected>
+      <selected>none</selected>
       <opt>
         <name>none</name>
         <lbs>0</lbs>
@@ -161,7 +143,7 @@
         <lbs>0</lbs>
       </opt>
       <opt>
-        <name>1000 Droptank</name>
+        <name>1000 l Droptank</name>
         <lbs>2204.0</lbs>
         <gals>211</gals>
       </opt>
@@ -188,23 +170,9 @@
     </weight>
 
     <weight n="5">
-      <name>pylon4.R</name>
+      <name>pylon2.R</name>
       <weight-lb>0</weight-lb>
-      <selected type="bool">true</selected>
-      <opt>
-        <name>none</name>
-        <lbs>0</lbs>
-      </opt>
-      <opt>
-        <name>AIM-9 Sidewinder</name>
-        <lbs>190.0</lbs>
-      </opt>
-    </weight>
-
-    <weight n="6">
-      <name>pylon1.R</name>
-      <weight-lb>0</weight-lb>
-      <selected type="bool">true</selected>
+      <selected>none</selected>
       <opt>
         <name>none</name>
         <lbs>0</lbs>
@@ -215,6 +183,20 @@
       <opt>
         <name>GBU-16</name>
         <lbs>1094.0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="6">
+      <name>pylon1.R</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+        <name>none</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9 Sidewinder</name>
+        <lbs>190.0</lbs>
       </opt>
     </weight>
 
@@ -236,6 +218,33 @@
     <menubar include="Dialogs/jaguar-menu.xml"/>
 
   </sim>
+
+  <!-- set up control properties for YASim -->
+  <controls>
+    <armament>
+      <station n="0">
+        <release type="bool">false</release>
+      </station>
+      <station n="1">
+        <release type="bool">false</release>
+      </station>
+      <station n="2">
+        <release type="bool">false</release>
+      </station>
+      <station n="3">
+        <release type="bool">false</release>
+      </station>
+      <station n="4">
+        <release type="bool">false</release>
+      </station>
+      <station n="5">
+        <release type="bool">false</release>
+      </station>
+      <station n="6">
+        <release type="bool">false</release>
+      </station>
+    </armament>
+  </controls>
 
   <environment>
     <turbulence>

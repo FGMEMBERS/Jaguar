@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <path>Aircraft/Jaguar/Models/weapons/AIM9.ac</path>
+  <path>AIM9.ac</path>
 
   <animation>
     <object-name>aim9</object-name>

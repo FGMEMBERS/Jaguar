@@ -8,36 +8,31 @@
 
   <!-- pylons -->
   
-<model>
-    <name>pylons</name>
-    <path>Aircraft/Jaguar/Models/weapons/pylons.ac</path>
+  <model>
+    <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
     <offsets>
       <x-m> 0 </x-m>
       <y-m> 0 </y-m>
       <z-m> 0 </z-m>
-      <pitch-deg> 0 </pitch-deg>
     </offsets>
   </model>
 
 
-<!-- pylon options -->
+  <!-- pylon options -->
+  <!--
+                 (0)             (6) 
+                 1.L     /-\     1.R
+         _________|_____/top\_____|_________
+            |     |     \___/     |    |  
+           2.L   3.L      |      3.R  2.R
+           (1)   (2)   Center    (4)  (5)
+                         (3) 
+  -->
 
-
-<!--station left 1 -->
-  <animation>
-    <type>select</type>
-    <object-name>pylon1.L</object-name>      
-    <condition>
-      <not-equals>
-        <property>sim/weight[0]/selected</property>
-        <value>none</value>
-      </not-equals>
-    </condition>
-  </animation>
-
+  <!--station left 1 -->
   <model>
-    <name>left AIM 9 pos 1</name>
-    <path>Aircraft/Jaguar/Models/weapons/AIM9.ac</path>
+    <name>left-AIM-9-pos-1</name>
+    <path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
       <y-m> -1.740 </y-m>
@@ -46,9 +41,9 @@
     </offsets>
   </model>	
 
-<animation>
+  <animation>
     <type>select</type>
-    <object-name>left AIM 9 pos 1</object-name>      
+    <object-name>left-AIM-9-pos-1</object-name>      
     <condition>
       <and>
         <equals>
@@ -63,22 +58,10 @@
     </condition>
   </animation>
 
-
   <!-- station left 2 -->
-  <animation>
-    <type>select</type>
-    <object-name>pylon4.L</object-name>      
-    <condition>
-      <not-equals>
-        <property>sim/weight[1]/selected</property>
-        <value>none</value>
-      </not-equals>
-    </condition>
-  </animation>
-
-<model>
-    <name>left AIM 9 pos 2</name>
-    <path>Aircraft/Jaguar/Models/weapons/AIM9.ac</path>
+  <model>
+    <name>left-AIM-9-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
     <offsets>
       <x-m>  2.400 </x-m>
       <y-m> -2.810 </y-m>
@@ -89,7 +72,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>left AIM 9 pos 2</object-name>      
+    <object-name>left-AIM-9-pos-2</object-name>      
     <condition>
       <and>
         <equals>
@@ -103,11 +86,10 @@
       </and>
     </condition>
   </animation>
-
-  
-<model>
-    <name>left GBU pos 2</name>
-    <path>Aircraft/Jaguar/Models/weapons/gbu16.ac</path>
+ 
+  <model>
+    <name>left-GBU-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
     <offsets>
       <x-m>  2.400 </x-m>
       <y-m> -2.810 </y-m>
@@ -116,9 +98,9 @@
     </offsets>
   </model>
 
-<animation>
+  <animation>
     <type>select</type>
-    <object-name>left GBU pos 2</object-name>      
+    <object-name>left-GBU-pos-2</object-name>      
     <condition>
       <and>
         <equals>
@@ -133,22 +115,10 @@
     </condition>
   </animation>
 
-
-<!-- station left 3 -->
-  <animation>
-    <type>select</type>
-    <object-name>pylon3.L</object-name>      
-    <condition>
-      <not-equals>
-        <property>sim/weight[2]/selected</property>
-        <value>none</value>
-      </not-equals>
-    </condition>
-  </animation>
-
+  <!-- station left 3 -->
   <model>
-    <name>left Tank</name>
-    <path>Aircraft/Jaguar/Models/weapons/tank1000.ac</path>
+    <name>left-Tank</name>
+    <path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
       <offsets>
       <x-m>  2.000 </x-m>
       <y-m> -1.740 </y-m>
@@ -157,9 +127,9 @@
     </offsets>
   </model>	
 
-<animation>
+  <animation>
     <type>select</type>
-    <object-name>left Tank</object-name>      
+    <object-name>left-Tank</object-name>      
     <condition>
       <and>
         <equals>
@@ -175,8 +145,8 @@
   </animation>
 
   <model>
-    <name>left GBU pos 3</name>
-    <path>Aircraft/Jaguar/Models/weapons/gbu16.ac</path>
+    <name>left-GBU-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
       <y-m> -1.740 </y-m>
@@ -187,7 +157,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>left GBU pos 3</object-name>      
+    <object-name>left-GBU-pos-3</object-name>      
     <condition>
       <and>
         <equals>
@@ -202,23 +172,10 @@
     </condition>
   </animation>	
 
-
-
   <!-- center station -->
-  <animation>
-    <type>select</type>
-    <object-name>pylon.C</object-name>      
-    <condition>
-      <not-equals>
-        <property>sim/weight[3]/selected</property>
-        <value>none</value>
-      </not-equals>
-    </condition>
-  </animation>
-
   <model>
-    <name>tank1000</name>
-    <path>Aircraft/Jaguar/Models/weapons/tank1000.ac</path>
+    <name>Center-tank</name>
+    <path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
     <offsets>
       <x-m>  1.600 </x-m>
       <y-m>  0.000 </y-m>
@@ -227,9 +184,9 @@
     </offsets>
   </model>
 
-<animation>
+  <animation>
     <type>select</type>
-    <object-name>center tank</object-name>      
+    <object-name>Center-tank</object-name>      
     <condition>
       <and>
         <equals>
@@ -244,21 +201,10 @@
     </condition>
   </animation>		
  
-<!-- station right 3 -->
-  <animation>
-    <type>select</type>
-    <object-name>pylon3.R</object-name>      
-    <condition>
-      <not-equals>
-        <property>sim/weight[4]/selected</property>
-        <value>none</value>
-      </not-equals>
-    </condition>
-  </animation>
-
+  <!-- station right 3 -->
   <model>
-    <name>right Tank</name>
-    <path>Aircraft/Jaguar/Models/weapons/tank1000.ac</path>
+    <name>right-Tank</name>
+    <path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
       <y-m>  1.740 </y-m>
@@ -269,7 +215,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>right Tank</object-name>      
+    <object-name>right-Tank</object-name>      
     <condition>
       <and>
         <equals>
@@ -283,22 +229,21 @@
       </and>
     </condition>
   </animation>
-
 	
   <model>
-    <name>right GBU pos 3</name>
+    <name>right-GBU-pos-3</name>
     <path>Aircraft/Jaguar/Models/weapons/gbu16.ac</path>
     <offsets>
       <x-m>  2.000 </x-m>
       <y-m>  1.740 </y-m>
-      <z-m> -0.460 </z-m>
+      <z-m> -0.430 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
     </offsets>
   </model>	
 
   <animation>
     <type>select</type>
-    <object-name>right GBU pos 3</object-name>      
+    <object-name>right-GBU-pos-3</object-name>      
     <condition>
       <and>
         <equals>
@@ -313,33 +258,21 @@
     </condition>
   </animation>	
 
-<!--station right 2 -->
-<animation>
-    <type>select</type>
-    <object-name>pylon4.R</object-name>      
-    <condition>
-      <not-equals>
-        <property>sim/weight[5]/selected</property>
-        <value>none</value>
-      </not-equals>
-    </condition>
-  </animation>
-
-  
-<model>
-    <name>right AIM 9 pos 2</name>
-    <path>Aircraft/Jaguar/Models/weapons/AIM9.ac</path>
+  <!--station right 2 -->
+  <model>
+    <name>right-AIM-9-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
-      <y-m>  1.740 </y-m>
-      <z-m>  0.240 </z-m>
+      <y-m>  2.810 </y-m>
+      <z-m> -0.520 </z-m>
       <pitch-deg> 0.865 </pitch-deg>
     </offsets>
   </model>	
 
   <animation>
     <type>select</type>
-    <object-name>right AIM 9 pos 2</object-name>      
+    <object-name>right-AIM-9-pos-2</object-name>      
     <condition>
       <and>
         <equals>
@@ -354,20 +287,20 @@
     </condition>
   </animation>
 
-<model>
-    <name>right GBU pos 2</name>
-    <path>Aircraft/Jaguar/Models/weapons/gbu16.ac</path>
+  <model>
+    <name>right-GBU-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
-      <y-m>  1.740 </y-m>
-      <z-m> -0.430 </z-m>
+      <y-m>  2.810 </y-m>
+      <z-m> -0.460 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
     </offsets>
   </model>	
 
-<animation>
+  <animation>
     <type>select</type>
-    <object-name>right GBU pos 2</object-name>      
+    <object-name>right-GBU-pos-2</object-name>      
     <condition>
       <and>
         <equals>
@@ -382,28 +315,10 @@
     </condition>
   </animation>	
 
-
-
-
-
-
-  
-
-<!--station right 1 -->
-  <animation>
-    <type>select</type>
-    <object-name>pylon1.R</object-name>      
-    <condition>
-      <not-equals>
-        <property>sim/weight[6]/selected</property>
-        <value>none</value>
-      </not-equals>
-    </condition>
-  </animation>
-
- <model>
-    <name>right AIM 9 pos 1</name>
-    <path>Aircraft/Jaguar/Models/weapons/AIM9.ac</path>
+  <!--station right 1 -->
+  <model>
+    <name>right-AIM-9-pos-1</name>
+    <path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
       <y-m>  1.740 </y-m>
@@ -414,7 +329,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>right AIM 9 pos 1</object-name>      
+    <object-name>right-AIM-9-pos-1</object-name>      
     <condition>
       <and>
         <equals>
