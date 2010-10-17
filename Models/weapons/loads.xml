@@ -9,7 +9,7 @@
   <!-- pylons -->
   
   <model>
-    <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
+    <path>pylons.xml</path>
     <offsets>
       <x-m> 0 </x-m>
       <y-m> 0 </y-m>

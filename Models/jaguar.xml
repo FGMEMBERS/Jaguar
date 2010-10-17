@@ -900,7 +900,7 @@
     </offsets>
   </model>
 
-<model>
+  <model>
     <path>Aircraft/Jaguar/Models/lights/beacon.xml</path>
     <offsets>
       <x-m> 3.626 </x-m>
@@ -908,7 +908,6 @@
       <z-m> -1.13 </z-m>
     </offsets>
   </model>
-
 
   <model>
     <path>Aircraft/Jaguar/Models/lights/RedLight.xml</path>
@@ -918,7 +917,6 @@
       <z-m> -0.281 </z-m>
     </offsets>
   </model>
-
 
   <model>
     <path>Aircraft/Jaguar/Models/lights/GreenLight.xml</path>

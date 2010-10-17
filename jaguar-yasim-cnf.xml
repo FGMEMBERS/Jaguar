@@ -16,9 +16,9 @@ Jaguar simulation config.
     <flight-model>yasim</flight-model>
     <aero>jaguar-yasim</aero>
 
-    <author>BARANGER Emmanuel, StuartC</author>
-    <aircraft-version>0.2</aircraft-version>
-    <status>2.4 Alpha</status>
+    <author>BARANGER Emmanuel, StuartC, Armchair Ace</author>
+    <aircraft-version>3.7</aircraft-version>
+    <status>3.7 Alpha</status>
 
   </sim>
 
