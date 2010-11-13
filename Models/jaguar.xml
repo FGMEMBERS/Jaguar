@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Jaguar/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -180,7 +194,7 @@
 
   <!-- Une ombre pour OSG
   <model>
-    <path>Aircraft/D510/Models/shadow.xml</path>
+    <path>Aircraft/Jaguar/Models/shadow.xml</path>
   </model> -->
 
   <!-- Armament  -->
@@ -278,6 +292,7 @@
     <offsets>
       <x-m>  5.561 </x-m>
       <y-m>  0.483 </y-m>
+
       <z-m> -0.572 </z-m>
     </offsets>
   </model>
@@ -894,18 +909,18 @@
   <model>
     <path>Aircraft/Jaguar/Models/lights/beacon.xml</path>
     <offsets>
-      <x-m> 1.3 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.680 </z-m>
+      <x-m> 1.300 </x-m>
+      <y-m> 0.000 </y-m> 
+      <z-m> 0.680 </z-m> 
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/Jaguar/Models/lights/beacon.xml</path>
     <offsets>
-      <x-m> 3.626 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> -1.13 </z-m>
+      <x-m>  3.626 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.130 </z-m>
     </offsets>
   </model>
 
@@ -917,6 +932,7 @@
       <z-m> -0.281 </z-m>
     </offsets>
   </model>
+
 
   <model>
     <path>Aircraft/Jaguar/Models/lights/GreenLight.xml</path>
@@ -976,11 +992,24 @@
     <object-name>Taxi-Light-Right</object-name>
     <condition>
       <equals>
-        <property>gear/gear[0]/position-norm</property>
-        <value> 1 </value>
+        <property>controls/switches/landing-light</property>
+        <value> true </value>
       </equals>
     </condition>
   </animation>
+
+  <!-- chute <model>
+  <name>Chute</name>
+    <path>Aircraft/Jaguar/Models/chute.xml</path>
+    <offsets>
+      <x-m>         -8 </x-m>
+      <y-m>          0 </y-m>
+      <z-m>         -1 </z-m>
+      <pitch-deg>    0 </pitch-deg>
+      <heading-deg>  0 </heading-deg>
+    </offsets>
+  </model>-->
+
 
 </PropertyList>
 

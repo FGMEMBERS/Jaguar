@@ -31,6 +31,12 @@
       <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
     </sound>
 
+    <!--
+    <ai>
+      <scenario>refueling_demo_2</scenario>
+    </ai>
+    -->
+
     <help>
       <title>Jaguar</title>
       <key>
@@ -68,11 +74,18 @@
       </autopilot>
       <refuel>
         <type>probe</type>
-        <serviceable type="bool">true</serviceable>
+        <!-- <serviceable type="bool">true</serviceable> -->
       </refuel>
+
     </systems> 
 
-  <!--
+    <mp-systems>
+      <radar-enabled type="bool">false</radar-enabled>
+      <ecm-rwr-enabled type="bool">false</ecm-rwr-enabled>
+      <combat-enabled type="bool">true</combat-enabled>
+    </mp-systems>
+
+    <!--
                  (0)             (6) 
                  1.L     /-\     1.R
          _________|_____/top\_____|_________
@@ -80,7 +93,7 @@
            2.L   3.L      |      3.R  2.R
            (1)   (2)   Center    (4)  (5)
                          (3) 
-  -->
+    -->
     <weight n="0">
       <name>pylon1.L</name>
       <weight-lb>0</weight-lb>
@@ -219,6 +232,17 @@
 
   </sim>
 
+  <instrumentation>
+    <radar>
+      <enabled type="bool">false</enabled>			
+      <range type="double">150</range>
+    </radar>
+    <rwr>
+      <display-lighting-intens type="double">0.4</display-lighting-intens>
+      <symbology-lighting-intens type="double">1</symbology-lighting-intens>
+    </rwr>
+  </instrumentation>
+
   <!-- set up control properties for YASim -->
   <controls>
     <armament>
@@ -244,6 +268,9 @@
         <release type="bool">false</release>
       </station>
     </armament>
+    <switches>
+      <landing-light type="bool">false</landing-light>
+    </switches>
   </controls>
 
   <environment>
@@ -321,6 +348,15 @@
     <aar> 
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
+    <rwr>
+      <file>Aircraft/Jaguar/Nasal/rwr.nas</file>
+    </rwr>
+    <radardist>
+      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist>
+    <enav>
+      <file>Aircraft/Jaguar/Nasal/enav.nas</file>
+    </enav>
   </nasal>
 
 </PropertyList>
