@@ -9,14 +9,13 @@
   <!-- pylons -->
   
   <model>
-    <path>pylons.xml</path>
+    <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
     <offsets>
       <x-m> 0 </x-m>
       <y-m> 0 </y-m>
       <z-m> 0 </z-m>
     </offsets>
   </model>
-
 
   <!-- pylon options -->
   <!--
@@ -115,6 +114,62 @@
     </condition>
   </animation>
 
+  <model>
+    <name>left-MK82-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
+    <offsets>
+      <x-m>  2.400 </x-m>
+      <y-m> -2.810 </y-m>
+      <z-m> -0.460 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>left-MK82-pos-2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[1]/selected</property>
+          <value>MK-82</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[1]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>left-ALARM-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+    <offsets>
+      <x-m>  2.400 </x-m>
+      <y-m> -2.810 </y-m>
+      <z-m> -0.460 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>left-ALARM-pos-2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[1]/selected</property>
+          <value>ALARM</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[1]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+ 
   <!-- station left 3 -->
   <model>
     <name>left-Tank</name>
@@ -135,6 +190,34 @@
         <equals>
           <property>sim/weight[2]/selected</property>
           <value>1000 l Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>left-large-Tank</name>
+    <path>Aircraft/Jaguar/Models/weapons/tank1500.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> -1.740 </y-m>
+      <z-m> -0.490 </z-m>
+      <pitch-deg>-1.74</pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left-large-Tank</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>1500 l Droptank</value>
         </equals>
         <equals>
           <property>controls/armament/station[2]/release</property>
@@ -170,14 +253,126 @@
         </equals>
       </and>
     </condition>
+  </animation>
+
+  <model>
+    <name>left-MK-82-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> -1.740 </y-m>
+      <z-m> -0.430 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left-MK-82-pos-3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>MK-82</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+
+  <model>
+    <name>left-MK82x2-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/mk82x2w.xml</path>
+    <offsets>
+      <x-m>  -5.500 </x-m>
+      <y-m> -0.05 </y-m>
+      <z-m> 0.17 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left-MK82x2-pos-3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>2x-MK-82</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>left-ALARM-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> -1.740 </y-m>
+      <z-m> -0.430 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left-ALARM-pos-3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>ALARM</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+
+  <model>
+    <name>left-SeaEagle-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/seaeagle.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> -1.740 </y-m>
+      <z-m> -0.430 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left-SeaEagle-pos-3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>SeaEagle</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
   </animation>	
 
   <!-- center station -->
   <model>
-    <name>Center-tank</name>
+    <name>1000 l Droptank</name>
     <path>Aircraft/Jaguar/Models/weapons/tank1000.xml</path>
     <offsets>
-      <x-m>  1.600 </x-m>
+      <x-m>  0.100 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -1.420 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
@@ -186,7 +381,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>Center-tank</object-name>      
+    <object-name>1000 l Droptank</object-name>      
     <condition>
       <and>
         <equals>
@@ -199,8 +394,92 @@
         </equals>
       </and>
     </condition>
-  </animation>		
+  </animation>	
+
+  <model>
+    <name>2x-MK-82</name>
+    <path>Aircraft/Jaguar/Models/weapons/mk82x2c.xml</path>
+    <offsets>
+      <x-m> -6.400 </x-m>
+      <y-m>  1.400 </y-m>
+      <z-m> -0.720 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>2x-MK-82</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>2x-MK-82</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[3]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+
+  <model>
+    <name>Center-ALARM</name>
+    <path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+    <offsets>
+      <x-m>  0.100 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.35 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Center-ALARM</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>ALARM</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[3]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
  
+  <model>
+    <name>Center-SeaEagle</name>
+    <path>Aircraft/Jaguar/Models/weapons/seaeagle.xml</path>
+    <offsets>
+      <x-m>  0.100 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.350 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Center-SeaEagle</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>SeaEagle</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[3]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>		
+
   <!-- station right 3 -->
   <model>
     <name>right-Tank</name>
@@ -229,10 +508,38 @@
       </and>
     </condition>
   </animation>
+
+  <model>
+    <name>right-large-Tank</name>
+    <path>Aircraft/Jaguar/Models/weapons/tank1500.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m>  1.740 </y-m>
+      <z-m> -0.490 </z-m>
+      <pitch-deg>-1.74</pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>right-large-Tank</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[4]/selected</property>
+          <value>1500 l Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[4]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
 	
   <model>
     <name>right-GBU-pos-3</name>
-    <path>Aircraft/Jaguar/Models/weapons/gbu16.ac</path>
+    <path>Aircraft/Jaguar/Models/weapons/gbu16.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
       <y-m>  1.740 </y-m>
@@ -257,6 +564,119 @@
       </and>
     </condition>
   </animation>	
+
+  <model>
+    <name>right-MK-82-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> 1.740 </y-m>
+      <z-m> -0.430 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>right-MK-82-pos-3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[4]/selected</property>
+          <value>MK-82</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[4]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>right-MK82x2-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/mk82x2w.xml</path>
+    <offsets>
+      <x-m>  -5.500 </x-m>
+      <y-m> 3.4 </y-m>
+      <z-m> 0.17 </z-m>
+
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>right-MK82x2-pos-3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[4]/selected</property>
+          <value>2x-MK-82</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[4]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+
+  <model>
+    <name>Right-ALARM-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> 1.740 </y-m>
+      <z-m> -0.430 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>Right-ALARM-pos-3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[4]/selected</property>
+          <value>ALARM</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[4]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+
+  <model>
+    <name>right-SeaEagle-pos-3</name>
+    <path>Aircraft/Jaguar/Models/weapons/seaeagle.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> 1.740 </y-m>
+      <z-m> -0.430 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>right-SeaEagle-pos-3</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[4]/selected</property>
+          <value>SeaEagle</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[4]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
 
   <!--station right 2 -->
   <model>
@@ -315,6 +735,62 @@
     </condition>
   </animation>	
 
+  <model>
+    <name>right-MK82-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
+    <offsets>
+      <x-m>  2.400 </x-m>
+      <y-m> 2.810 </y-m>
+      <z-m> -0.460 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>right-MK82-pos-2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[5]/selected</property>
+          <value>MK-82</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[5]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation> 
+
+  <model>
+    <name>right-ALARM-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
+    <offsets>
+      <x-m>  2.400 </x-m>
+      <y-m> 2.810 </y-m>
+      <z-m> -0.460 </z-m>
+      <pitch-deg> -0.865 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>right-ALARM-pos-2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[5]/selected</property>
+          <value>ALARM</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[5]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
   <!--station right 1 -->
   <model>
     <name>right-AIM-9-pos-1</name>
@@ -345,5 +821,4 @@
   </animation>
 
 </PropertyList>
-
 

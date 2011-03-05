@@ -2,6 +2,7 @@
 
 <PropertyList>
 
+<!-- <path>Aircraft/Jaguar/Models/weapons/gbu16.ac</path> -->
   <path>gbu16.ac</path>
 
   <animation>

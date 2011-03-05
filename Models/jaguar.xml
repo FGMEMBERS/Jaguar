@@ -194,7 +194,7 @@
 
   <!-- Une ombre pour OSG
   <model>
-    <path>Aircraft/Jaguar/Models/shadow.xml</path>
+    <path>Aircraft/D510/Models/shadow.xml</path>
   </model> -->
 
   <!-- Armament  -->
@@ -238,7 +238,7 @@
       <x-m> -2.364 </x-m>
       <y-m>  0.569 </y-m>
       <z-m> -0.936 </z-m>
-     <roll-deg>    0 </roll-deg>
+      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
@@ -360,7 +360,7 @@
 
   <!-- Rentré des roues Temporairement disparition/apparition des roues -->
   <animation>
-    <type>select</type>
+    <name>ToutesLesRoues</name>
     <object-name>axeAH</object-name>
     <object-name>roueA</object-name>
     <object-name>axeGH</object-name>
@@ -369,6 +369,11 @@
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>ToutesLesRoues</object-name>
     <condition>
       <not>
         <equals>
@@ -400,7 +405,7 @@
     <type>rotate</type>
     <object-name>profondeurG</object-name>
     <property>surface-positions/elevator-pos-norm</property>
-    <factor>-8</factor>
+    <factor> -8 </factor>
     <axis>
       <x1-m>  6.433 </x1-m>
       <y1-m> -0.254 </y1-m>
@@ -415,7 +420,7 @@
     <type>rotate</type>
     <object-name>profondeurD</object-name>
     <property>surface-positions/elevator-pos-norm</property>
-    <factor>-8</factor>
+    <factor> -8 </factor>
     <axis>
       <x1-m>  7.548 </x1-m>
       <y1-m>  2.253 </y1-m>
@@ -470,7 +475,7 @@
     <type>rotate</type>
     <object-name>voletG</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-15.0</factor>
+    <factor> -15 </factor>
     <axis>
       <x1-m>  3.454 </x1-m>
       <y1-m> -2.254 </y1-m>
@@ -485,7 +490,7 @@
     <type>rotate</type>
     <object-name>voletD</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-15.0</factor>
+    <factor> -15 </factor>
     <axis>
       <x1-m>  4.175 </x1-m>
       <y1-m>  4.160 </y1-m>
@@ -500,7 +505,7 @@
     <type>rotate</type>
     <object-name>volets</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>40.0</factor>
+    <factor> 40 </factor>
     <center>
       <x-m>  3.335 </x-m>
       <y-m>  0.000 </y-m>
@@ -913,7 +918,7 @@
       <y-m> 0.000 </y-m> 
       <z-m> 0.680 </z-m> 
     </offsets>
-  </model>
+  </model> 
 
   <model>
     <path>Aircraft/Jaguar/Models/lights/beacon.xml</path>
@@ -932,7 +937,6 @@
       <z-m> -0.281 </z-m>
     </offsets>
   </model>
-
 
   <model>
     <path>Aircraft/Jaguar/Models/lights/GreenLight.xml</path>
@@ -961,8 +965,7 @@
     </offsets>
   </model>
 
-  <!-- Taxi light cone -->
-  <model>
+  <!-- Taxi light cone   <model>
     <name>Taxi-Light-Left</name>
     <path>Aircraft/Jaguar/Models/lights/light-cone.xml</path>
     <offsets>
@@ -992,24 +995,25 @@
     <object-name>Taxi-Light-Right</object-name>
     <condition>
       <equals>
-        <property>controls/switches/landing-light</property>
-        <value> true </value>
+        <property>gear/gear[0]/position-norm</property>
+        <value> 1 </value>
       </equals>
     </condition>
-  </animation>
+  </animation> -->
 
-  <!-- chute <model>
-  <name>Chute</name>
+<!-- chute 
+  <model>
+    <name>Chute</name>
     <path>Aircraft/Jaguar/Models/chute.xml</path>
     <offsets>
-      <x-m>         -8 </x-m>
-      <y-m>          0 </y-m>
-      <z-m>         -1 </z-m>
-      <pitch-deg>    0 </pitch-deg>
-      <heading-deg>  0 </heading-deg>
+      <x-m> -8 </x-m>
+      <y-m>  0 </y-m>
+      <z-m> -1 </z-m>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
-  </model>-->
-
+  </model>
+-->
 
 </PropertyList>
 

@@ -21,7 +21,13 @@
       <serviceable type="bool">true</serviceable>
       <path>Aircraft/Jaguar/Models/Effects/guns/submodels.xml</path>
       <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
+      <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
     </submodels>
+
+    <hud>
+      <path>Aircraft/Jaguar/Hud/default.xml</path>
+      <visibility>true</visibility>
+    </hud>
 
     <startup>
       <splash-texture>Aircraft/Jaguar/jaguar-splash.png</splash-texture>
@@ -31,11 +37,9 @@
       <path>Aircraft/Jaguar/Sounds/jaguar-sound.xml</path>
     </sound>
 
-    <!--
     <ai>
       <scenario>refueling_demo_2</scenario>
     </ai>
-    -->
 
     <help>
       <title>Jaguar</title>
@@ -69,30 +73,33 @@
       <electrical>
         <path>Aircraft/Generic/generic-electrical.xml</path>
       </electrical>
+
       <autopilot>
         <path>Aircraft/Jaguar/System/jag-autopilot.xml</path>
       </autopilot>
+
       <refuel>
         <type>probe</type>
-        <!-- <serviceable type="bool">true</serviceable> -->
+        <serviceable type="bool">true</serviceable>
       </refuel>
-
     </systems> 
 
     <mp-systems>
-      <radar-enabled type="bool">false</radar-enabled>
-      <ecm-rwr-enabled type="bool">false</ecm-rwr-enabled>
+      <radar-enabled type="bool">true</radar-enabled>
+      <ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
       <combat-enabled type="bool">true</combat-enabled>
     </mp-systems>
+				
+
 
     <!--
-                 (0)             (6) 
-                 1.L     /-\     1.R
-         _________|_____/top\_____|_________
-            |     |     \___/     |    |  
-           2.L   3.L      |      3.R  2.R
-           (1)   (2)   Center    (4)  (5)
-                         (3) 
+                   (0)             (6) 
+                   1.L     /-\     1.R
+           _________|_____/top\_____|_________
+              |     |     \___/     |    |  
+             2.L   3.L      |      3.R  2.R
+             (1)   (2)   Center    (4)  (5)
+                           (3) 
     -->
     <weight n="0">
       <name>pylon1.L</name>
@@ -108,228 +115,363 @@
       </opt>
     </weight>
 
-    <weight n="1">
-      <name>pylon2.L</name>
-      <weight-lb>0</weight-lb>
-      <selected>none</selected>
-      <opt>
-        <name>none</name>
-        <lbs>0</lbs>
-      </opt>
-      <opt>
-        <name>AIM-9 Sidewinder</name>
-        <lbs>190.0</lbs>
-      </opt>
-      <opt>
-        <name>GBU-16</name>
-        <lbs>1094.0</lbs>
-      </opt>
-    </weight>
+<weight n="1">
+<name>pylon2.L</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9 Sidewinder</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1094.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>ALARM</name>
+<lbs>590.0</lbs>
+</opt>
+</weight>
 
-    <weight n="2">
-      <name>pylon3.L</name>
-      <tank>7</tank>
-      <weight-lb>0</weight-lb>
-      <selected>none</selected>
-      <opt>
-        <name>none</name>
-        <lbs>0</lbs>
-      </opt>
-      <opt>
-        <name>1000 l Droptank</name>
-        <lbs>2204.0</lbs>
-      <gals>211</gals>
-      </opt>
-      <opt>
-        <name>GBU-16</name>
-        <lbs>1094.0</lbs>
-      </opt>
-    </weight>
+<weight n="2">
+<name>pylon3.L</name>
+<tank>5</tank>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>1000 l Droptank</name>
+<lbs>2204.0</lbs>
+<gals>211</gals>
+</opt>
+<opt>
+<name>1500 l Droptank</name>
+<lbs>2645.0</lbs>
+<gals>396</gals>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1094.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>2x-MK-82</name>
+<lbs>1000.0</lbs>
+</opt>
+<opt>
+<name>ALARM</name>
+<lbs>590.0</lbs>
+</opt>
+<opt>
+<name>SeaEagle</name>
+<lbs>1276.0</lbs>
+</opt>
+</weight>
 
-    <weight n="3">
-      <name>pylon.C</name>
-      <tank>6</tank>
-      <weight-lb>0</weight-lb>
-      <selected>none</selected>
-      <opt>
-        <name>none</name>
-        <lbs>0</lbs>
-      </opt>
-      <opt>
-        <name>1000 l Droptank</name>
-        <lbs>2204.0</lbs>
-        <gals>211</gals>
-      </opt>
-    </weight>
+<weight n="3">
+<name>pylon.C</name>
+<tank>6</tank>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>1000 l Droptank</name>
+<lbs>2204.0</lbs>
+<gals>211</gals>
+</opt>
+<opt>
+<name>2x-MK-82</name>
+<lbs>1000.0</lbs>
+</opt>
+<opt>
+<name>ALARM</name>
+<lbs>590.0</lbs>
+</opt>
+<opt>
+<name>SeaEagle</name>
+<lbs>1276.0</lbs>
+</opt>
+</weight>
 
-    <weight n="4">
-      <name>pylon3.R</name>
-      <tank>8</tank>
-      <weight-lb>0</weight-lb>
-      <selected>none</selected>
-      <opt>
-        <name>none</name>
-        <lbs>0</lbs>
-      </opt>
-      <opt>
-        <name>GBU-16</name>
-        <lbs>1094.0</lbs>
-      </opt>
-      <opt>
-        <name>1000 l Droptank</name>
-        <lbs>2204.0</lbs>
-        <gals>211</gals>
-      </opt>
-    </weight>
+<weight n="4">
+<name>pylon3.R</name>
+<tank>7</tank>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1094.0</lbs>
+</opt>
+<opt>
+<name>1000 l Droptank</name>
+<lbs>2204.0</lbs>
+<gals>211</gals>
+</opt>
+<opt>
+<name>1500 l Droptank</name>
+<lbs>2645.0</lbs>
+<gals>396</gals>
+</opt>
 
-    <weight n="5">
-      <name>pylon2.R</name>
-      <weight-lb>0</weight-lb>
-      <selected>none</selected>
-      <opt>
-        <name>none</name>
-        <lbs>0</lbs>
-      </opt><opt>
-        <name>AIM-9 Sidewinder</name>
-        <lbs>190.0</lbs>
-      </opt>
-      <opt>
-        <name>GBU-16</name>
-        <lbs>1094.0</lbs>
-      </opt>
-    </weight>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>2x-MK-82</name>
+<lbs>1000.0</lbs>
+</opt>
+<opt>
+<name>ALARM</name>
+<lbs>590.0</lbs>
+</opt>
+<opt>
+<name>SeaEagle</name>
+<lbs>1276.0</lbs>
+</opt>
+</weight>
 
-    <weight n="6">
-      <name>pylon1.R</name>
-      <weight-lb>0</weight-lb>
-      <selected>none</selected>
-      <opt>
-        <name>none</name>
-        <lbs>0</lbs>
-      </opt>
-      <opt>
-        <name>AIM-9 Sidewinder</name>
-        <lbs>190.0</lbs>
-      </opt>
-    </weight>
+<weight n="5">
+<name>pylon2.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9 Sidewinder</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1094.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>ALARM</name>
+<lbs>590.0</lbs>
+</opt>
+</weight>
 
-    <weight n="7">
-      <name>Crew</name>
-      <weight-lb>180</weight-lb> 
-      <max-lb>400</max-lb>
-      <min-lb>180</min-lb>
-    </weight>
+<weight n="6">
+<name>pylon1.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9 Sidewinder</name>
+<lbs>190.0</lbs>
+</opt>
+</weight>
 
-    <current-view>
-      <field-of-view>86.3</field-of-view>
-    </current-view>
+<weight n="5">
+<name>pylon2.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9 Sidewinder</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1094.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>ALARM</name>
+<lbs>590.0</lbs>
+</opt>
+</weight>
 
-    <replay>
-      <disable>1</disable>
-    </replay>
+<weight n="6">
+<name>pylon1.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9 Sidewinder</name>
+<lbs>190.0</lbs>
+</opt>
+</weight>
 
-    <menubar include="Dialogs/jaguar-menu.xml"/>
+<weight n="7">
+<name>Crew</name>
+<weight-lb>200</weight-lb> 
+<min-lb>200</min-lb>
+<max-lb>400</max-lb>
+</weight> 
 
-  </sim>
 
-  <instrumentation>
-    <radar>
-      <enabled type="bool">false</enabled>			
-      <range type="double">150</range>
-    </radar>
-    <rwr>
-      <display-lighting-intens type="double">0.4</display-lighting-intens>
-      <symbology-lighting-intens type="double">1</symbology-lighting-intens>
-    </rwr>
-  </instrumentation>
+<current-view>
+<field-of-view>86.3</field-of-view>
+</current-view>
 
-  <!-- set up control properties for YASim -->
-  <controls>
-    <armament>
-      <station n="0">
-        <release type="bool">false</release>
-      </station>
-      <station n="1">
-        <release type="bool">false</release>
-      </station>
-      <station n="2">
-        <release type="bool">false</release>
-      </station>
-      <station n="3">
-        <release type="bool">false</release>
-      </station>
-      <station n="4">
-        <release type="bool">false</release>
-      </station>
-      <station n="5">
-        <release type="bool">false</release>
-      </station>
-      <station n="6">
-        <release type="bool">false</release>
-      </station>
-    </armament>
-    <switches>
-      <landing-light type="bool">false</landing-light>
-    </switches>
-  </controls>
+<replay>
+<disable>0</disable>
+</replay>
 
-  <environment>
-    <turbulence>
-      <use-cloud-turbulence>true</use-cloud-turbulence>
-    </turbulence>
-  </environment>
+<menubar include="Dialogs/jaguar-menu.xml"/>
 
-  <engines>
-    <engine n="0">
-      <engine-num type="int">0</engine-num>
-      <running>false</running>
-    </engine>
-    <engine n="2">
-      <engine-num type="int">1</engine-num>
-      <running>false</running>
-    </engine>
-  </engines>
+</sim>
 
-  <input>
-    <keyboard include="Nasal/jaguar-keyboard.xml"/>
-  </input>
+
+<instrumentation>
+<!--<radar>
+<enabled type="bool">true</enabled>			
+<range type="double">150</range>
+</radar> -->
+<rwr>
+<display-lighting-intens type="double">0.4</display-lighting-intens>
+<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+</rwr>
+
+
+<radar>
+      <range type="int" archive="y">20</range>
+      <range-factor type="double" archive="n">0.001888</range-factor>
+      <minimized type="bool" archive="y">false</minimized>
+      <selected type="int">2</selected>
+
+      <!-- inicio en pruebas -->
+	<enabled type="bool">true</enabled>
+	<az-field type="double">120</az-field>
+	<range type="double">150</range>
+	<range-selected type="double">50</range-selected>
+	<radar2-range type="double">150</radar2-range>
+	<display-rdr type="bool">true</display-rdr>
+	<radar-standby type="int">0</radar-standby>
+	<mode>
+	    <rws type="bool">true</rws>
+	    <tws-auto type="bool">false</tws-auto>
+	</mode>
+
+ </radar> 
+
+</instrumentation>
+
+
+<!-- set up control properties for YASim -->
+<controls>
+<armament>
+<station n="0">
+<release type="bool">false</release>
+</station>
+<station n="1">
+<release type="bool">false</release>
+</station>
+<station n="2">
+<release type="bool">false</release>
+</station>
+<station n="3">
+<release type="bool">false</release>
+</station>
+<station n="4">
+<release type="bool">false</release>
+</station>
+<station n="5">
+<release type="bool">false</release>
+</station>
+<station n="6">
+<release type="bool">false</release>
+</station>
+</armament>
+</controls>
+
+<environment>
+<turbulence>
+<use-cloud-turbulence>true</use-cloud-turbulence>
+</turbulence>
+</environment>
+
+<engines>
+<engine n="0">
+<engine-num type="int">0</engine-num>
+<running>false</running>
+</engine>
+<engine n="2">
+<engine-num type="int">1</engine-num>
+<running>false</running>
+</engine>
+</engines>
+
+<input>
+<keyboard include="Nasal/jaguar-keyboard.xml"/>
+</input>
  
-  <consumables>
-    <fuel>
-      <tank n="0">
-        <tank-num type="int">0</tank-num>
-        <level-gal_us archive="y">2200</level-gal_us>
-      </tank>
-      <tank n="1">
-        <tank-num type="int">1</tank-num>
-        <level-gal_us archive="y">2200</level-gal_us>
-      </tank>
-      <tank n="2">
-        <tank-num type="int">2</tank-num>
-        <level-gal_us archive="y">1031</level-gal_us>
-      </tank>
-      <tank n="3">
-        <tank-num type="int">3</tank-num>
-        <level-gal_us archive="y">1031</level-gal_us>
-      </tank>
-      <tank n="4">
-        <tank-num type="int">4</tank-num>
-        <level-gal_us archive="y">1031</level-gal_us>
-      </tank>
-      <tank n="5">
-        <name>centerline Droptank</name>
-        <selected type="bool">false</selected>
-      </tank>
-      <tank n="6">
-        <name>left wing Droptank</name>
-        <selected type="bool">false</selected>
-      </tank>
-      <tank n="7">
-        <name>right wing Droptank</name>
-        <selected type="bool">false</selected>
-      </tank>
-    </fuel>
-  </consumables>
+<consumables>
+<fuel>
+<tank n="0">
+<tank-num type="int">0</tank-num>
+<level-gal_us archive="y">2200</level-gal_us>
+</tank>
+<tank n="1">
+<tank-num type="int">1</tank-num>
+<level-gal_us archive="y">2200</level-gal_us>
+</tank>
+<tank n="2">
+<tank-num type="int">2</tank-num>
+<level-gal_us archive="y">1031</level-gal_us>
+</tank>
+<tank n="3">
+<tank-num type="int">3</tank-num>
+<level-gal_us archive="y">1031</level-gal_us>
+</tank>
+<tank n="4">
+<tank-num type="int">4</tank-num>
+<level-gal_us archive="y">1031</level-gal_us>
+</tank>
+<tank n="5">
+<name>left-Tank</name>
+<selected type="bool">false</selected>
+</tank>
+<tank n="6">
+<name>Center-tank</name>
+<selected type="bool">false</selected>
+</tank>
+<tank n="7">
+<name>right-Tank</name>
+<selected type="bool">false</selected>
+</tank>
+</fuel>
+</consumables>
 
   <nasal>
     <doors>
@@ -349,7 +491,8 @@
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
     <rwr>
-      <file>Aircraft/Jaguar/Nasal/rwr.nas</file>
+      <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
+      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
     </rwr>
     <radardist>
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
@@ -360,3 +503,4 @@
   </nasal>
 
 </PropertyList>
+
