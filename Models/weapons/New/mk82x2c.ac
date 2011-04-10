@@ -7,7 +7,7 @@ OBJECT poly
 name "mk82-3-0"
 data 8
 Mesh.011
-texture "mk-82.rgb"
+texture "mk-82.png"
 texrep 1 1
 crease 45.000000
 numvert 195
@@ -312,6 +312,7 @@ refs 4
 7 0.988659977913 0.520875990391
 15 0.975045979023 0.468719989061
 SURF 0x10
+
 mat 1
 refs 4
 17 0.954671978951 0.433869987726
@@ -2052,7 +2053,7 @@ OBJECT poly
 name "mk82-3-2"
 data 8
 Mesh.013
-texture "mk-82.rgb"
+texture "mk-82.png"
 texrep 1 1
 crease 45.000000
 numvert 195

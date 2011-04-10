@@ -5,7 +5,7 @@ Jaguar simulation config.
 
 2008-05-26 BARANGER Emmanuel
 2010-09    StuartC
-2011-03    SturatC
+2011-04    StuartC
 ************************************************************************
 -->
 
@@ -24,3 +24,4 @@ Jaguar simulation config.
   </sim>
 
 </PropertyList>
+

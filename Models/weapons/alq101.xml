@@ -2,10 +2,10 @@
 
 <PropertyList>
 
-  <path>baeAlarm.ac</path>
+  <path>alq-101.ac</path>
 
   <animation>
-    <object-name>alarm</object-name>
+    <object-name>Dash10</object-name>
   </animation>
 
 </PropertyList>

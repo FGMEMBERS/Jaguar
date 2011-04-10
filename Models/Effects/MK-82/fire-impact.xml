@@ -28,17 +28,17 @@
     <type>blend</type>
     <object-name>sphere2</object-name>
     <property>sim/time/elapsed-sec</property>
-    <factor> 0.01 </factor>
-    <min> 0 </min>
-    <max> 1 </max>
+    <factor>0.01</factor>
+    <min>0</min>
+    <max>1</max>
   </animation>
 
   <animation>
     <type>dist-scale</type>
     <object-name>sphere2</object-name>
     <interpolation>
-      <entry><ind>    0 </ind><dep> 1 </dep></entry>
-      <entry><ind> 3000 </ind><dep> 4 </dep></entry>
+      <entry><ind>0</ind><dep>1</dep></entry>
+      <entry><ind>3000</ind><dep>4</dep></entry>
     </interpolation>
   </animation>
 
@@ -57,8 +57,9 @@
     <type>billboard</type>
     <object-name>sphere</object-name>
     <spherical>true</spherical>
-    </animation>
-    <animation>
+  </animation>
+
+  <animation>
     <type>scale</type>
     <object-name>sphere</object-name>
     <property>sim/time/elapsed-sec</property>
@@ -76,7 +77,7 @@
     <type>blend</type>
     <object-name>sphere</object-name>
     <property>sim/time/elapsed-sec</property>
-    <factor> 1 </factor>
+    <factor>1</factor>
     <min> 0 </min>
     <max> 1 </max>
   </animation>
@@ -85,8 +86,8 @@
     <type>dist-scale</type>
     <object-name>sphere</object-name>
     <interpolation>
-      <entry><ind>    0 </ind><dep> 1 </dep></entry>
-      <entry><ind> 3000 </ind><dep> 4 </dep></entry>
+    <entry><ind>    0 </ind><dep> 1 </dep></entry>
+    <entry><ind> 3000 </ind><dep> 4 </dep></entry>
     </interpolation>
   </animation>
 

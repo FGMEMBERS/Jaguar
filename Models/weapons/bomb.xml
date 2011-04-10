@@ -23,9 +23,9 @@
     <object-name>Sphere</object-name>
     <object-name>Sphere.003</object-name>
     <condition>
-     <not>
-       <property>fdm/jsbsim/systems/armament/station1/released</property>
-     </not>
+      <not>
+        <property>fdm/jsbsim/systems/armament/station1/released</property>
+      </not>
     </condition>
   </animation>
 

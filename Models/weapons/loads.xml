@@ -17,6 +17,7 @@
     </offsets>
   </model>
 
+
   <!-- pylon options -->
   <!--
                  (0)             (6) 
@@ -29,6 +30,8 @@
   -->
 
   <!--station left 1 -->
+
+
   <model>
     <name>left-AIM-9-pos-1</name>
     <path>Aircraft/Jaguar/Models/weapons/AIM9.xml</path>
@@ -48,6 +51,35 @@
         <equals>
           <property>sim/weight[0]/selected</property>
           <value>AIM-9 Sidewinder</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>left-ALQ-101-pos-1</name>
+    <path>Aircraft/Jaguar/Models/weapons/alq101.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m> -1.740 </y-m>
+      <z-m>  0.26 </z-m>
+      <pitch-deg> 0.865 </pitch-deg>
+      <roll-deg>180</roll-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left-ALQ-101-pos-1</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>ALQ-101 ECM pod</value>
         </equals>
         <equals>
           <property>controls/armament/station[0]/release</property>
@@ -161,6 +193,34 @@
         <equals>
           <property>sim/weight[1]/selected</property>
           <value>ALARM</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[1]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>left-ALQ-101-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/alq101.xml</path>
+    <offsets>
+      <x-m>  2.400 </x-m>
+      <y-m> -2.810 </y-m>
+      <z-m> -0.460 </z-m>
+      <pitch-deg> 0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left-ALQ-101-pos-2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[1]/selected</property>
+          <value>ALQ-101 ECM pod</value>
         </equals>
         <equals>
           <property>controls/armament/station[1]/release</property>
@@ -570,7 +630,7 @@
     <path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
-      <y-m> 1.740 </y-m>
+      <y-m>  1.740 </y-m>
       <z-m> -0.430 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
     </offsets>
@@ -597,10 +657,9 @@
     <name>right-MK82x2-pos-3</name>
     <path>Aircraft/Jaguar/Models/weapons/mk82x2w.xml</path>
     <offsets>
-      <x-m>  -5.500 </x-m>
-      <y-m> 3.4 </y-m>
-      <z-m> 0.17 </z-m>
-
+      <x-m> -5.500 </x-m>
+      <y-m>  3.400 </y-m>
+      <z-m>  0.170 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
     </offsets>
   </model>	
@@ -627,7 +686,7 @@
     <path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
-      <y-m> 1.740 </y-m>
+      <y-m>  1.740 </y-m>
       <z-m> -0.430 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
     </offsets>
@@ -655,7 +714,7 @@
     <path>Aircraft/Jaguar/Models/weapons/seaeagle.xml</path>
     <offsets>
       <x-m>  2.000 </x-m>
-      <y-m> 1.740 </y-m>
+      <y-m>  1.740 </y-m>
       <z-m> -0.430 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
     </offsets>
@@ -740,7 +799,7 @@
     <path>Aircraft/Jaguar/Models/weapons/single-MK-82-LD.xml</path>
     <offsets>
       <x-m>  2.400 </x-m>
-      <y-m> 2.810 </y-m>
+      <y-m>  2.810 </y-m>
       <z-m> -0.460 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
     </offsets>
@@ -768,7 +827,7 @@
     <path>Aircraft/Jaguar/Models/weapons/alarm.xml</path>
     <offsets>
       <x-m>  2.400 </x-m>
-      <y-m> 2.810 </y-m>
+      <y-m>  2.810 </y-m>
       <z-m> -0.460 </z-m>
       <pitch-deg> -0.865 </pitch-deg>
     </offsets>
@@ -782,6 +841,34 @@
         <equals>
           <property>sim/weight[5]/selected</property>
           <value>ALARM</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[5]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>right-ALQ-101-pos-2</name>
+    <path>Aircraft/Jaguar/Models/weapons/alq101.xml</path>
+    <offsets>
+      <x-m>  2.400 </x-m>
+      <y-m>  2.810 </y-m>
+      <z-m> -0.460 </z-m>
+      <pitch-deg> 0.865 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>right-ALQ-101-pos-2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[5]/selected</property>
+          <value>ALQ-101 ECM pod</value>
         </equals>
         <equals>
           <property>controls/armament/station[5]/release</property>
@@ -811,6 +898,35 @@
         <equals>
           <property>sim/weight[6]/selected</property>
           <value>AIM-9 Sidewinder</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[6]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+    <name>right-ALQ-101-pos-1</name>
+    <path>Aircraft/Jaguar/Models/weapons/alq101.xml</path>
+    <offsets>
+      <x-m>  2.000 </x-m>
+      <y-m>  1.740 </y-m>
+      <z-m>  0.260 </z-m>
+      <pitch-deg> 0.865 </pitch-deg>
+      <roll-deg>180</roll-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>right-ALQ-101-pos-1</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[6]/selected</property>
+          <value>ALQ-101 ECM pod</value>
         </equals>
         <equals>
           <property>controls/armament/station[6]/release</property>
