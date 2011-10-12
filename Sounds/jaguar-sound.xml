@@ -302,6 +302,92 @@
       <max-dist>1000</max-dist>
     </guns>
 
+<stall>
+        <name>stall</name>
+        <mode>looped</mode>
+        <path>/Aircraft/Jaguar/Sounds/stall.wav</path>
+        <condition>
+            <less-than>
+                <property>velocities/airspeed-kt</property>
+                <value>175</value>
+            </less-than>
+            <not>
+                <property>/gear/gear[0]/wow</property>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+                <property>/surface-positions/flap-pos-norm</property>
+                <property>/gear/gear[0]/position-norm</property>
+            </not>
+        </condition>
+        <volume>
+            <max>0.5</max>
+        </volume>
+        <position>
+            <x>-23</x>
+            <y>0</y>
+            <z>1</z>
+        </position>
+        <reference-dist>1.0</reference-dist>
+        <max-dist>2.0</max-dist>
+    </stall>
+
+    <stall>
+        <name>stall</name>
+        <mode>looped</mode>
+        <path>/Aircraft/Jaguar/Sounds/stall.wav</path>
+        <condition>
+            <less-than>
+                <property>velocities/airspeed-kt</property>
+                <value>150</value>
+            </less-than>
+            <not>
+                <property>/gear/gear[0]/wow</property>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+                <property>/gear/gear[0]/position-norm</property>
+            </not>
+        </condition>
+        <volume>
+            <max>0.5</max>
+        </volume>
+        <position>
+            <x>-22</x>
+            <y>0</y>
+            <z>0</z>
+        </position>
+        <reference-dist>1.0</reference-dist>
+        <max-dist>2.0</max-dist>
+    </stall>
+
+    <stall>
+        <name>stall</name>
+        <mode>looped</mode>
+        <path>/Aircraft/Jaguar/Sounds/stall.wav</path>
+        <condition>
+            <less-than>
+                <property>velocities/airspeed-kt</property>
+                <value>140</value>
+            </less-than>
+            <not>
+                <property>/gear/gear[0]/wow</property>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+                <property>/surface-positions/flap-pos-norm</property>
+            </not>
+        </condition>
+        <volume>
+            <max>0.5</max>
+        </volume>
+        <position>
+            <x>-22</x>
+            <y>0</y>
+            <z>0</z>
+        </position>
+        <reference-dist>1.0</reference-dist>
+        <max-dist>2.0</max-dist>
+    </stall>		
+	
+	
   </fx>
  
 </PropertyList>

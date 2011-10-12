@@ -5,13 +5,6 @@
   <path>aoa_indexer.ac</path>
 
   <animation>
-    <object-name>box</object-name>
-    <object-name>too-slow</object-name>
-    <object-name>on-speed</object-name>
-    <object-name>too-fast</object-name>
-  </animation>
-
-  <animation>
     <type>select</type>
     <object-name>too-slow</object-name>
     <condition>

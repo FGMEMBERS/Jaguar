@@ -192,29 +192,19 @@
     <object-name>vitres</object-name>
   </animation>
 
-  <!-- Une ombre pour OSG
+  <!-- Une ombre pour OSG -->
   <model>
-    <path>Aircraft/D510/Models/shadow.xml</path>
-  </model> -->
+    <path>Aircraft/Jaguar/Models/shadow.xml</path>
+  </model>
 
   <!-- Armament  -->
   <model>
     <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
   </model> 
 
   <!-- Interieur -->
   <model>
     <path>Aircraft/Jaguar/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
   </model>
 
   <!-- Effets de tir -->
@@ -399,7 +389,7 @@
     <type>rotate</type>
     <object-name>profondeurG</object-name>
     <property>surface-positions/elevator-pos-norm</property>
-    <factor> -8 </factor>
+    <factor>-8</factor>
     <axis>
       <x1-m>  6.433 </x1-m>
       <y1-m> -0.254 </y1-m>
@@ -414,7 +404,7 @@
     <type>rotate</type>
     <object-name>profondeurD</object-name>
     <property>surface-positions/elevator-pos-norm</property>
-    <factor> -8 </factor>
+    <factor>-8</factor>
     <axis>
       <x1-m>  7.548 </x1-m>
       <y1-m>  2.253 </y1-m>
@@ -469,7 +459,7 @@
     <type>rotate</type>
     <object-name>voletG</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor> -15 </factor>
+    <factor>-15.0</factor>
     <axis>
       <x1-m>  3.454 </x1-m>
       <y1-m> -2.254 </y1-m>
@@ -484,7 +474,7 @@
     <type>rotate</type>
     <object-name>voletD</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor> -15 </factor>
+    <factor>-15.0</factor>
     <axis>
       <x1-m>  4.175 </x1-m>
       <y1-m>  4.160 </y1-m>
@@ -499,7 +489,7 @@
     <type>rotate</type>
     <object-name>volets</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor> 40 </factor>
+    <factor>40.0</factor>
     <center>
       <x-m>  3.335 </x-m>
       <y-m>  0.000 </y-m>
@@ -910,7 +900,7 @@
     <offsets>
       <x-m> 1.300 </x-m>
       <y-m> 0.000 </y-m> 
-      <z-m> 0.680 </z-m> 
+	    <z-m> 0.680 </z-m> 
     </offsets>
   </model> 
 
@@ -959,7 +949,32 @@
     </offsets>
   </model>
 
-  <!-- Taxi light cone   <model>
+  <!-- Taxi light cone -->  
+  <model>
+    <path>Aircraft/Jaguar/Models/lights/landinglight.xml</path>
+    <name>NoseGearLandinglightL</name>     
+    <offsets>
+      <x-m> -4.369 </x-m>
+      <y-m> -0.163 </y-m>
+      <z-m> -1.308 </z-m>
+      <pitch-deg>  -10 </pitch-deg>
+      <heading-deg> 10 </heading-deg>     
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Jaguar/Models/lights/landinglight.xml</path>
+    <name>NoseGearLandinglightR</name>     
+    <offsets>
+      <x-m> -4.369 </x-m>
+      <y-m>  0.163 </y-m>
+      <z-m> -1.308 </z-m>
+      <pitch-deg>  -10 </pitch-deg>
+      <heading-deg> 10 </heading-deg>     
+    </offsets>
+  </model>  
+  
+  <model>
     <name>Taxi-Light-Left</name>
     <path>Aircraft/Jaguar/Models/lights/light-cone.xml</path>
     <offsets>
@@ -987,17 +1002,20 @@
     <type>select</type>
     <object-name>Taxi-Light-Left</object-name>
     <object-name>Taxi-Light-Right</object-name>
+    <object-name>NoseGearLandinglightL</object-name>     
+    <object-name>NoseGearLandinglightR</object-name>     
     <condition>
       <equals>
-        <property>gear/gear[0]/position-norm</property>
+        <property>controls/switches/landing-light</property>
         <value> 1 </value>
       </equals>
     </condition>
-  </animation> -->
+  </animation> 
 
-  <!-- chute <model>
-  <name>Chute</name>
-    <path>Aircraft/Jaguar/Models/chute.xml</path>
+  <!-- chute
+  <model>
+    <name>Chute</name>
+    <path>Aircraft/Jaguar/Models/Effects/chute/chute.xml</path>
     <offsets>
       <x-m>        -8 </x-m>
       <y-m>         0 </y-m>
@@ -1005,7 +1023,138 @@
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
-  </model> -->
+  </model>
+  -->
 
+  <!-- aircraft wash modeled in the lines below -->
+  <model>
+    <name>aircraft_wash_l</name>
+    <path>Aircraft/Jaguar/Models/Effects/wash/aircraft_wash.xml</path>
+    <condition>
+    <equals>
+    <property>controls/state/low_level</property>
+    <value>1</value>
+    </equals>
+    </condition>
+    <offsets>
+      <x-m> 25.00 </x-m>
+      <y-m>  4.50 </y-m>
+      <z-m>  0.00 </z-m>
+      <pitch-deg> 0 </pitch-deg>
+    </offsets>
+  </model>
+ 
+  <model>
+    <name>aircraft_wash_r</name>
+    <path>Aircraft/Jaguar/Models/Effects/wash/aircraft_wash.xml</path>
+    <condition>
+      <equals>
+        <property>controls/state/low_level</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <offsets>
+      <x-m> 25.00 </x-m>
+      <y-m> -4.50 </y-m>
+      <z-m>  0.00 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>aircraft_wash_l</object-name>
+    <object-name>aircraft_wash_r</object-name>
+    <property>position/altitude-agl-ft</property>
+    <condition>
+      <equals>
+        <property>controls/state/low_level</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 300 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  1 </z>
+    </axis>
+  </animation>
+
+  <!-- Speed Braked -->
+  <!-- Left  
+  <animation>
+    <type>select</type>
+    <object-name>freinG</object-name> 
+    <condition>
+      <greater-than>
+        <property>surface-positions/speedbrake-norm</property>
+        <value>0.0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>freinG</object-name>
+    <property>surface-positions/speedbrake-norm</property>
+    <factor> 60 </factor>
+    <center>
+      <x-m>  2.17 </x-m>
+      <y-m> -1.50 </y-m>
+      <z-m> -0.92 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z> -1 </z>
+    </axis>
+  </animation>
+  -->
+
+  <!-- Right 
+  <animation>
+    <type>select</type>
+    <object-name>freinD</object-name> 
+    <condition>
+      <greater-than>
+        <property>surface-positions/speedbrake-norm</property>
+        <value>0.0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>freinD</object-name>
+    <property>surface-positions/speedbrake-norm</property>
+    <factor>60</factor>
+    <center>
+      <x-m>  2.17 </x-m>
+      <y-m>  1.50 </y-m>
+      <z-m> -0.92 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+ -->
+ 
+  <!-- ******************************************************************* -->
+  <!-- FX                                                                  -->
+  <!-- ******************************************************************* -->
+ 	<model>
+		<path>Aircraft/Jaguar/Models/Effects/fx/fx.xml</path>
+		<offsets>
+			<x-m> 0.00 </x-m>
+			<y-m> 0.00 </y-m>
+			<z-m> 0.28 </z-m>
+		</offsets>
+	</model> 
+ 
 </PropertyList>
 

@@ -5,9 +5,7 @@
   <path>mk82x2w.ac</path>
 
   <animation>
-    <object-name>mk82L</object-name>
-    <object-name>mk82R</object-name>
-    <object-name>ter</object-name>
+    <object-name>mk82x2w</object-name>
   </animation>
 
 </PropertyList>

@@ -8,7 +8,7 @@
     <flight-model>yasim</flight-model>
     <aero>jaguar-yasim</aero>
 
-    <fuel-fraction>0.75</fuel-fraction>
+    <fuel-fraction>1</fuel-fraction>
 
     <model>
       <path>Aircraft/Jaguar/Models/jaguar.xml</path>
@@ -22,11 +22,12 @@
       <path>Aircraft/Jaguar/Models/Effects/guns/submodels.xml</path>
       <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
       <path>Aircraft/Jaguar/Models/weapons/pylons.xml</path>
+      <path>Aircraft/Jaguar/Systems/sub_lancer.xml</path>
     </submodels>
 
     <hud>
-      <path>Aircraft/Jaguar/Hud/default.xml</path>
-      <visibility>true</visibility>
+      <path n="1">Aircraft/Jaguar/Hud/hud.xml</path>
+      <visibility n="1">true</visibility>
     </hud>
 
     <startup>
@@ -58,16 +59,20 @@
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int type="int">  0 </int>  <!-- 0 immat -->
-        <int type="int">  0 </int>  <!-- 1 immat -->
-        <int type="int">  0 </int>  <!-- 2 immat -->
-        <int type="int">  0 </int>  <!-- 3 immat -->
-        <int type="int">  0 </int>  <!-- 4 immat -->
-        <int type="int">  0 </int>  <!-- 5 immat -->
-        <int type="bool"> 0 </int>  <!-- 6 smoke -->
-        <int type="int">  0 </int>  <!-- 7 color -->
+        <int type="int" n="0">  0 </int>                                      <!-- 0 immat -->
+        <int type="int" n="1">  0 </int>                                      <!-- 1 immat -->
+        <int type="int" n="2">  0 </int>                                      <!-- 2 immat -->
+        <int type="int" n="3">  0 </int>                                      <!-- 3 immat -->
+        <int type="int" n="4">  0 </int>                                      <!-- 4 immat -->
+        <int type="int" n="5">  0 </int>                                      <!-- 5 immat -->
+        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
+        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
+        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>  
       </generic>
     </multiplay>
 
@@ -76,20 +81,15 @@
         <path>Aircraft/Generic/generic-electrical.xml</path>
       </electrical>
       <autopilot>
-        <path>Aircraft/Jaguar/System/jag-autopilot.xml</path>
+        <path>Aircraft/Jaguar/System/autopilot2.xml</path>
       </autopilot>
-      <refuel>
-        <type>probe</type>
-        <serviceable type="bool">false</serviceable>
-      </refuel>
     </systems> 
 
     <mp-systems>
       <radar-enabled type="bool">true</radar-enabled>
       <ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
       <combat-enabled type="bool">true</combat-enabled>
-    </mp-systems>
- 				
+    </mp-systems>		
 
     <!--
                    (0)             (6) 
@@ -110,11 +110,11 @@
       </opt>
       <opt>
         <name>AIM-9 Sidewinder</name>
-        <lbs>190</lbs>
+        <lbs>190.0</lbs>
       </opt>
       <opt>
         <name>ALQ-101 ECM pod</name>
-        <lbs>335</lbs>
+        <lbs>335.0</lbs>
       </opt>
     </weight>
 
@@ -128,23 +128,23 @@
       </opt>
       <opt>
         <name>AIM-9 Sidewinder</name>
-        <lbs>190</lbs>
+        <lbs>190.0</lbs>
       </opt>
       <opt>
         <name>GBU-16</name>
-        <lbs>1094</lbs>
+        <lbs>1094.0</lbs>
       </opt>
       <opt>
         <name>MK-82</name>
-        <lbs>500</lbs>
+        <lbs>500.0</lbs>
       </opt>
       <opt>
         <name>ALARM</name>
-        <lbs>590</lbs>
+        <lbs>590.0</lbs>
       </opt>
       <opt>
         <name>ALQ-101 ECM pod</name>
-        <lbs>335</lbs>
+        <lbs>335.0</lbs>
       </opt>
     </weight>
 
@@ -159,33 +159,33 @@
       </opt>
       <opt>
         <name>1000 l Droptank</name>
-        <lbs>2204</lbs>
+        <lbs>2204.0</lbs>
         <gals>211</gals>
       </opt>
       <opt>
         <name>1500 l Droptank</name>
-        <lbs>2645</lbs>
-        <gals>396</gals>
+        <lbs>2645.0</lbs>
+      <gals>396</gals>
       </opt>
       <opt>
         <name>GBU-16</name>
-        <lbs>1094</lbs>
+        <lbs>1094.0</lbs>
       </opt>
       <opt>
         <name>MK-82</name>
-        <lbs>500</lbs>
+        <lbs>500.0</lbs>
       </opt>
       <opt>
         <name>2x-MK-82</name>
-        <lbs>1000</lbs>
+        <lbs>1000.0</lbs>
       </opt>
       <opt>
         <name>ALARM</name>
-        <lbs>590</lbs>
+        <lbs>590.0</lbs>
       </opt>
       <opt>
         <name>SeaEagle</name>
-        <lbs>1276</lbs>
+        <lbs>1276.0</lbs>
       </opt>
     </weight>
 
@@ -200,20 +200,20 @@
       </opt>
       <opt>
         <name>1000 l Droptank</name>
-        <lbs>2204</lbs>
+        <lbs>2204.0</lbs>
         <gals>211</gals>
       </opt>
       <opt>
         <name>2x-MK-82</name>
-        <lbs>1000</lbs>
+        <lbs>1000.0</lbs>
       </opt>
       <opt>
         <name>ALARM</name>
-        <lbs>590</lbs>
+        <lbs>590.0</lbs>
       </opt>
       <opt>
         <name>SeaEagle</name>
-        <lbs>1276</lbs>
+        <lbs>1276.0</lbs>
       </opt>
     </weight>
 
@@ -228,25 +228,25 @@
       </opt>
       <opt>
         <name>GBU-16</name>
-        <lbs>1094</lbs>
+        <lbs>1094.0</lbs>
       </opt>
       <opt>
         <name>1000 l Droptank</name>
-        <lbs>2204</lbs>
+        <lbs>2204.0</lbs>
         <gals>211</gals>
       </opt>
       <opt>
         <name>1500 l Droptank</name>
-        <lbs>2645</lbs>
+        <lbs>2645.0</lbs>
         <gals>396</gals>
       </opt>
       <opt>
         <name>MK-82</name>
-        <lbs>500</lbs>
+        <lbs>500.0</lbs>
       </opt>
       <opt>
         <name>2x-MK-82</name>
-        <lbs>1000</lbs>
+        <lbs>1000.0</lbs>
       </opt>
       <opt>
         <name>ALARM</name>
@@ -254,7 +254,7 @@
       </opt>
       <opt>
         <name>SeaEagle</name>
-        <lbs>1276</lbs>
+        <lbs>1276.0</lbs>
       </opt>
     </weight>
 
@@ -268,7 +268,7 @@
       </opt>
       <opt>
         <name>AIM-9 Sidewinder</name>
-        <lbs>190</lbs>
+        <lbs>190.0</lbs>
       </opt>
       <opt>
         <name>GBU-16</name>
@@ -276,11 +276,11 @@
       </opt>
       <opt>
         <name>MK-82</name>
-        <lbs>500</lbs>
+        <lbs>500.0</lbs>
       </opt>
       <opt>
         <name>ALARM</name>
-        <lbs>590</lbs>
+        <lbs>590.0</lbs>
       </opt>
     </weight>
 
@@ -308,23 +308,23 @@
       </opt>
       <opt>
         <name>AIM-9 Sidewinder</name>
-        <lbs>190</lbs>
+        <lbs>190.0</lbs>
       </opt>
       <opt>
         <name>GBU-16</name>
-        <lbs>1094</lbs>
+        <lbs>1094.0</lbs>
       </opt>
       <opt>
         <name>MK-82</name>
-        <lbs>500</lbs>
+        <lbs>500.0</lbs>
       </opt>
       <opt>
         <name>ALARM</name>
-        <lbs>590</lbs>
+        <lbs>590.0</lbs>
       </opt>
       <opt>
         <name>ALQ-101 ECM pod</name>
-        <lbs>335</lbs>
+        <lbs>335.0</lbs>
       </opt>
     </weight>
 
@@ -338,11 +338,11 @@
       </opt>
       <opt>
         <name>AIM-9 Sidewinder</name>
-        <lbs>190</lbs>
+        <lbs>190.0</lbs>
       </opt>
       <opt>
         <name>ALQ-101 ECM pod</name>
-        <lbs>335</lbs>
+        <lbs>335.0</lbs>
       </opt>
     </weight>
 
@@ -365,14 +365,40 @@
 
   </sim>
 
+  <systems>
+    <refuel>
+      <type>probe</type>
+      <serviceable type="bool">true</serviceable>
+    </refuel>
+  </systems> 
+
+  <!--
+  <autopilot>
+    <settings>
+      <target-agl-ft type="float">1000</target-agl-ft>
+      <target-altitude-ft type="float">8000</target-altitude-ft>
+      <target-pitch-deg type="float">0</target-pitch-deg>
+      <target-vfps type="float">0</target-vfps>
+      <take-off-pitch-deg type="float">2.0</take-off-pitch-deg>
+      <target-speed-kt type="float">350.0</target-speed-kt>
+      <climb-out-initial-pitch-deg type="float">6.0</climb-out-initial-pitch-deg>
+      <climb-out-final-pitch-deg type="float">3.0</climb-out-final-pitch-deg>
+      <target-climb-rate-fpm type="float">2000.0</target-climb-rate-fpm>
+      <target-descent-rate-fpm type="float">2000.0</target-descent-rate-fpm>
+      <ground-roll-heading-deg type="float">-999.9</ground-roll-heading-deg>
+      <target-mach type="float">0.9</target-mach>
+      <target-aoa-deg type="float">1.0</target-aoa-deg>
+      <max-roll-deg type="float">60</max-roll-deg>
+    </settings>
+  </autopilot>
+  -->
+
   <instrumentation>
     <rwr>
       <display-lighting-intens type="double">0.4</display-lighting-intens>
       <symbology-lighting-intens type="double">1</symbology-lighting-intens>
     </rwr>
-    <enav>
-      <selected type="int">3</selected>
-    </enav>
+    <enav><selected type="int">3</selected></enav>
     <radar>
       <range type="int" archive="y">40</range>
       <range-factor type="double" archive="n">0.001888</range-factor>
@@ -412,6 +438,9 @@
 
   <!-- set up control properties for YASim -->
   <controls>
+    <gear>
+      <brake-parking type="double">1.0</brake-parking>
+    </gear>
     <armament>
       <station n="0">
         <release type="bool">false</release>
@@ -483,14 +512,17 @@
       <tank n="5">
         <name>left-Tank</name>
         <selected type="bool">false</selected>
+        <level-gal_us>120</level-gal_us>
       </tank>
       <tank n="6">
         <name>Center-tank</name>
         <selected type="bool">false</selected>
+        <level-gal_us>120</level-gal_us>
       </tank>
       <tank n="7">
         <name>right-Tank</name>
         <selected type="bool">false</selected>
+        <level-gal_us>120</level-gal_us>
       </tank>
     </fuel>
   </consumables>
@@ -502,8 +534,15 @@
     <jaguar>
       <file>Aircraft/Jaguar/Nasal/light.nas</file>
       <file>Aircraft/Jaguar/Nasal/liveries.nas</file>
+      <file>Aircraft/Jaguar/Nasal/doors.nas</file>
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
     </jaguar>
+    <Jag_hud>
+      <file>Aircraft/Jaguar/Nasal/hud.nas</file>
+    </Jag_hud>
+    <low>
+      <file>Aircraft/Jaguar/Nasal/low.nas</file>
+    </low>
     <guns>
       <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
       <file>Aircraft/Jaguar/Nasal/revi.nas</file>
@@ -511,20 +550,29 @@
     <aar> 
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
-<!--
+    <rwr>
+      <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
+      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
+    </rwr>
+    <!--
     <radardist>
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
     </radardist>
--->
-    <rwr>
-      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
-    </rwr>
+     -->
     <radar>
       <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/radar.nas</file> 
     </radar>
     <enav>
       <file>Aircraft/Jaguar/Nasal/enav.nas</file>
     </enav>
+    <tfs>
+		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
+    </tfs>
+    <weapons>
+		  <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
+		  <file>Aircraft/Jaguar/Nasal/guide_to_target.nas</file>
+		  <file>Aircraft/Jaguar/Nasal/oso_target.nas</file>
+  	</weapons>	
   </nasal>
 
 </PropertyList>
