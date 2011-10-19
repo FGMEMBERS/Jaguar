@@ -4,7 +4,7 @@
     <path>mfd.ac</path>
 
  <panel>
-  <path>Aircraft/Jaguar/Models/interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
+  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
   <bottom-left>
    <x-m>0.02</x-m>
    <y-m>-0.1</y-m>
@@ -24,7 +24,7 @@
 
 	<model>
 		<name>enav</name>
-    <path>Aircraft/Jaguar/Models/interior/Panel/Instruments/mfd/enav.xml</path>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/enav.xml</path>
     <offsets> 
       <x-m>0.015</x-m>
       <y-m>-0.001</y-m>
