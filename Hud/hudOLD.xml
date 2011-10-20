@@ -7,7 +7,7 @@
     
     <label>
         <name>G Load</name>
-       <x>-43</x>
+        <x>-43</x>
         <y>-38</y>
         <width>1.5</width>
         <height>1.5</height>
@@ -42,7 +42,6 @@
         <enable-dynamic-origin>false</enable-dynamic-origin>
         <enable-fuselage-ref-line>true</enable-fuselage-ref-line>
         <enable-target-spot>true</enable-target-spot>
-		<enable-target-markers>true</enable-target-markers>
 		<enable-target-markers>true</enable-target-markers>
         <enable-velocity-vector>false</enable-velocity-vector>
         <enable-drift-marker>false</enable-drift-marker>
@@ -158,7 +157,7 @@
 -->
     <label>
         <name>Gyro Heading Label</name>
-       <x>-9</x>
+        <x>-9</x>
         <y>-35</y>
         <width>18</width>
         <height>15</height>

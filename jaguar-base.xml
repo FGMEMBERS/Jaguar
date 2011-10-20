@@ -28,6 +28,26 @@
     <hud>
       <path n="1">Aircraft/Jaguar/Hud/hud.xml</path>
       <visibility n="1">true</visibility>
+      <palette>
+        <color n="0">
+          <alpha type="float">0.85</alpha>
+          <antialiased type="bool">true</antialiased>
+          <brightness type="float">0.85</brightness>
+          <transparent type="bool">true</transparent>
+          <red type="float">0.38</red>
+          <green type="float">1.0</green>
+          <blue type="float">0.22</blue>
+        </color>
+        <color n="1">
+          <alpha type="float">0.85</alpha>
+          <antialiased type="bool">true</antialiased>
+          <brightness type="float">0.85</brightness>
+          <transparent type="bool">true</transparent>
+          <red type="float">1.0</red>
+          <green type="float">0.2</green>
+          <blue type="float">0.0</blue>
+        </color>
+      </palette>
     </hud>
 
     <startup>
@@ -537,9 +557,11 @@
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
     </jaguar>
+	<!--
     <Jag_hud>
       <file>Aircraft/Jaguar/Nasal/hud.nas</file>
     </Jag_hud>
+	-->
     <low>
       <file>Aircraft/Jaguar/Nasal/low.nas</file>
     </low>
@@ -566,13 +588,13 @@
       <file>Aircraft/Jaguar/Nasal/enav.nas</file>
     </enav>
     <tfs>
-		  <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
+      <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
     </tfs>
     <weapons>
-		  <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
-		  <file>Aircraft/Jaguar/Nasal/guide_to_target.nas</file>
-		  <file>Aircraft/Jaguar/Nasal/oso_target.nas</file>
-  	</weapons>	
+      <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
+      <file>Aircraft/Jaguar/Nasal/guide_to_target.nas</file>
+      <file>Aircraft/Jaguar/Nasal/oso_target.nas</file>
+    </weapons>	
   </nasal>
 
 </PropertyList>

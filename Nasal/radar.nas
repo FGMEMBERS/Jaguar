@@ -1,76 +1,159 @@
-# ================================== EHSI Stuff ===================================
+# =======================
+# Multiplayer Quirks
+# =======================
+
+var RadarStandby      = props.globals.getNode("instrumentation/radar/radar-standby");
+
+MPjoin = func(n) {
+   #print(n.getValue(), " added");
+   setprop("instrumentation/radar",n.getValue(),"radar/y-shift",0);
+   setprop("instrumentation/radar",n.getValue(),"radar/x-shift",0);
+   setprop("instrumentation/radar",n.getValue(),"radar/rotation",0);
+   setprop("instrumentation/radar",n.getValue(),"radar/in-range",0);
+   setprop("instrumentation/radar",n.getValue(),"radar/h-offset",180);
+   setprop("instrumentation/radar",n.getValue(),"joined",1);
+}
+MPleave= func(n) {
+   #print(n.getValue(), " removed");
+   setprop("instrumentation/radar",n.getValue(),"radar/in-range",0);
+   setprop("instrumentation/radar",n.getValue(),"joined",0);
+}
 
 
-range_control_node = props.globals.getNode("/instrumentation/radar/range-control", 1);
-range_node = props.globals.getNode("/instrumentation/radar/range", 1);
-wx_range_node = props.globals.getNode("/instrumentation/wxradar/range", 1);
-x_shift_node=  props.globals.getNode("instrumentation/tacan/display/x-shift", 1);
-x_shift_scaled_node=  props.globals.getNode("instrumentation/tacan/display/x-shift-scaled",1);
-y_shift_node=  props.globals.getNode("instrumentation/tacan/display/y-shift", 1);
-y_shift_scaled_node=  props.globals.getNode("instrumentation/tacan/display/y-shift-scaled",1);
-display_control_node = props.globals.getNode("/instrumentation/display-unit/control", 1);
-radar_control_node = props.globals.getNode("/instrumentation/radar/mode-control", 1);
-radar_mode_control_node = props.globals.getNode("/instrumentation/radar/mode-control", 1);
-radar_display_node = props.globals.getNode("/instrumentation/radar/display-mode", 1);
+#need to copy the properties so that we never try to access a non-existent property in XML
+MPradarProperties = func {
+   var Estado = RadarStandby.getValue();
+   if ( Estado != 1 ) {
+      targetList = props.globals.getNode("ai/models/").getChildren("multiplayer");
+      foreach (d; props.globals.getNode("ai/models/").getChildren("aircraft")) {
+         append(targetList,d);
+      }
+      foreach (m; targetList) {
+         var string = "instrumentation/radar/ai/models/"~m.getName()~"["~m.getIndex()~"]/";
+         if (getprop(string,"joined")==1 or m.getName()=="aircraft") {
+            factor = getprop("instrumentation/radar/range-factor"); ## if (factor == nil) { factor=0.001888};
+            setprop(string,"radar/y-shift",m.getNode("radar/y-shift").getValue() * factor);
+            setprop(string,"radar/x-shift",m.getNode("radar/x-shift").getValue() * factor);
+            setprop(string,"radar/rotation",m.getNode("radar/rotation").getValue());
+            setprop(string,"radar/h-offset",m.getNode("radar/h-offset").getValue());
+   
+            if (getprop("instrumentation/radar/selected")==2){
+               if (getprop(string~"radar/x-shift") < -0.04 or 
+                   getprop(string~"radar/x-shift") > 0.04) {
+                  setprop(string,"radar/in-range",0);
+               } else {
+                  setprop(string,"radar/in-range",m.getNode("radar/in-range").getValue());
+               }
+            } else {
+               setprop(string,"radar/in-range",m.getNode("radar/in-range").getValue());
+            }
+         } 
+      }
+   
+      # this is a good place to deal with the range scaling factors
+      if (getprop("instrumentation/radar/selected")==2) {
+         if (getprop("instrumentation/radar/range")==10) {
+            setprop("instrumentation/radar/range",20);
+            setprop("instrumentation/radar/range-factor",0.002);
+         }
+         elsif (getprop("instrumentation/radar/range")==20) {
+            setprop("instrumentation/radar/range-factor",0.003246);
+         }
+         else { #40
+            setprop("instrumentation/radar/range-factor",0.001623);
+         }
+      }
+      elsif(getprop("instrumentation/radar/selected")==3 or getprop("instrumentation/radar/selected")==4) {
+        if (getprop("instrumentation/radar/range")==40) {
+           setprop("instrumentation/radar/range",20);
+           setprop("instrumentation/radar/range-factor",0.001888);
+        }
+        elsif (getprop("instrumentation/radar/range")==20) {
+           setprop("instrumentation/radar/range-factor",0.001888);
+        }
+        else { #10
+           setprop("instrumentation/radar/range-factor",0.003776);
+        }
+      }
 
-range_control_node.setIntValue(3); 
-range_node.setIntValue(40); 
-wx_range_node.setIntValue(40); 
-x_shift_node.setDoubleValue(0);
-x_shift_scaled_node.setDoubleValue(0);
-y_shift_node.setDoubleValue(0);
-y_shift_scaled_node.setDoubleValue(0);
-display_control_node.setIntValue(1);
-radar_control_node.setIntValue(1);
-var scale = 2.55;	
+   } # from Estado
 
-# Lib functions
-pow2 = func(e) { return e ? 2 * pow2(e - 1) : 1 } # calculates 2^e
-
-
-adjustRange = func{
-
-	range = range_node.getValue();
-	range_control = range_control_node.getValue();
-	
-	range = 5 * pow2(range_control); 
-
-#  	print ("range " , range);
-
-	range_node.setIntValue(range);
-	wx_range_node.setIntValue(range);
-	scale = 1.275 * pow2 (7 - range_control) * 0.1275;
-	scale = sprintf("%2.3f" , scale);
-
-#	print ("scale " , scale);
-
-} # end function adjustRange
-
-scaleShift = func {
-
-	x_shift_scaled_node.setDoubleValue(x_shift_node.getValue() * scale);
-	y_shift_scaled_node.setDoubleValue(y_shift_node.getValue() * scale);
-#	print ("x-shift-scaled " , x_shift_scaled_node.getValue());
-#	print ("y-shift-scaled " , y_shift_scaled_node.getValue());
-	settimer(scaleShift, 0.3);
-
-} # end func scaleshift
-
-
-scaleShift();
-
-setlistener(range_control_node , adjustRange);
-
-updateRadarMode = func{
-	radar_mode_control = radar_mode_control_node.getValue();
-		if ( radar_mode_control == 2 ) {
-				radar_display_node.setValue("map");
-		} else {
-				radar_display_node.setValue("plan");
-		}
-} # end func
-
-setlistener( radar_mode_control_node , updateRadarMode );
+   settimer(MPradarProperties,1.0);
+}
 
 
-#end
+# ===================
+# Boresight Detecting
+# ===================
+locking=0;
+found=-1;
+
+boreSightLock = func {
+   var Estado = RadarStandby.getValue();
+
+   if ( Estado != 1 ) {
+
+   if(getprop("instrumentation/radar/selected") == 1){
+
+      targetList= props.globals.getNode("ai/models/").getChildren("multiplayer");
+      foreach (d; props.globals.getNode("ai/models/").getChildren("aircraft")) {
+         append(targetList,d);
+      }
+
+      foreach (m; targetList) {
+          var string = "instrumentation/radar/ai/models/"~m.getName()~"["~m.getIndex()~"]";
+          var string1 = "ai/models/"~m.getName()~"["~m.getIndex()~"]";
+          if (getprop(string1~"radar/in-range")) {
+
+            hOffset = getprop(string1~"radar/h-offset");
+            vOffset = getprop(string1~"radar/v-offset");
+
+            #really should be a cone, but is a square pyramid to avoid trigonemetry
+            if(hOffset < 3 and hOffset > -3 and vOffset < 3 and vOffset > -3) {
+               if (locking == 11){
+                  setprop(string~"radar/boreLock",2);
+                  setprop("instrumentation/radar/lock",2);
+                  # setprop("sim[0]/hud/current-color",1);
+                  locking -= 1;
+               }
+               elsif (locking ==1 or locking ==3 or locking ==5 or locking ==7 or locking ==9 ) {
+                  setprop("instrumentation/radar/lock",1);
+                  setprop(string1~"radar/boreLock",1);
+               }
+               else {
+                  setprop("instrumentation/radar/lock",0);
+                  setprop(string~"radar/boreLock",1);
+               }
+
+               if (found != m.getIndex()) {
+                  found=m.getIndex();
+                  locking=0;
+               }
+               else {
+                  locking += 1;
+               }
+               settimer(boreSightLock, 0.2);
+               return;
+            }
+         }
+      }
+      setprop(string~"radar/boreLock",0);
+      locking=0;
+      # setprop("sim[0]/hud/current-color",0);
+   } # from getprop
+   } # from Estado
+
+   locking=0;
+   # setprop("sim[0]/hud/current-color",0);
+   found =-1;
+   setprop("instrumentation/radar/lock",0);
+
+   settimer(boreSightLock, 0.2);
+}
+
+
+setlistener("ai/models/model-added", MPjoin);
+setlistener("ai/models/model-removed", MPleave);
+settimer(MPradarProperties,1.0);
+settimer(boreSightLock, 1.0);
+
