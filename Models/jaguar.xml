@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<PropertyList>
+<PropertyList include="bombableinclude.xml">
 
   <path>jaguar.ac</path>
 
@@ -67,6 +67,9 @@
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
+    <object-name>trous</object-name>
+    <object-name>lampe</object-name>
+    <object-name>lampesporteA</object-name>
 
     <!-- Objets transparents -->
     <object-name>verriere</object-name>
@@ -113,6 +116,9 @@
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
+    <object-name>trous</object-name>
+    <object-name>lampe</object-name>
+    <object-name>lampesporteA</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -150,6 +156,7 @@
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <!-- <inherits-from>Aircraft/Jaguar/Models/Effects/BumpMap/bumpmap</inherits-from> -->
     <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
     <object-name>tourverriere</object-name>
@@ -195,6 +202,11 @@
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/Jaguar/Models/shadow.xml</path>
+    <offsets>
+      <x-m> -0.06085 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -2.07500 </z-m>
+    </offsets>
   </model>
 
   <!-- Armament  -->
@@ -536,6 +548,7 @@
   <animation>
     <type>rotate</type>
     <object-name>porteA</object-name>
+    <object-name>lampesporteA</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>

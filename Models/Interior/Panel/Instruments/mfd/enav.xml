@@ -1,225 +1,385 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <PropertyList>
 
- <path>enav.ac</path>
+  <path>enav.ac</path>
  
- <!--
- <animation>
-	 <type>select</type>
-	 <object-name>Menu</object-name>
-	 <condition>   
-		 <equals>
-			 <property>instrumentation/enav[0]/selected</property>
-			 <value>4</value>
-		 </equals>
-	 </condition>
- </animation>
--->
- <animation>
-	 <type>select</type>
-	 <object-name>rose</object-name>
-	 <object-name>tacandme</object-name>
-	 <object-name>tacandme4</object-name>
-	 <object-name>tacandme3</object-name>	 
-	 <object-name>tacandme2</object-name>
-	 <object-name>tacandme1</object-name>
-	 <object-name>tacanlabel</object-name>
-	 <object-name>hdglabel</object-name>
-	 <object-name>hdg3</object-name>
-	 <object-name>hdg2</object-name>
-	 <object-name>hdg1</object-name>
-	 <object-name>gsindex</object-name> 
-	 <object-name>navidr4</object-name>	 
-	 <object-name>navidr3</object-name>
-	 <object-name>navidr2</object-name>	 
-	 <object-name>navidr1</object-name>
-	 <object-name>dmerlabel</object-name>
-	 <object-name>navidl4</object-name>	 
-	 <object-name>navidl3</object-name>
-	 <object-name>navidl2</object-name>	 
-	 <object-name>navidl1</object-name>
-	 <object-name>dmellabel</object-name> 
-	 <object-name>dmel4</object-name> 
-	 <object-name>dmel3</object-name> 
-	 <object-name>dmel2</object-name> 
-	 <object-name>dmel1</object-name> 
-	 <object-name>bug</object-name>
-	 <condition>
-		 <not>
-		 	<equals>
-				 <property>instrumentation/enav[0]/selected</property>
-			 	<value>4</value>
-		 	</equals>
-		</not>
-	 </condition>
- </animation>
- 
- 
- <animation>
-	 <type>select</type>
-	 <object-name>gsarrow</object-name>
-	 <object-name>locindex</object-name>
-	 <object-name>arrow1</object-name>
-	 <object-name>arrow2</object-name>
-	 <object-name>arrow3</object-name>
-	 <object-name>arrow3</object-name>
-	 <condition>   
-		<equals>
-		 <property>instrumentation/enav[0]/selected</property>
-		 <value>0</value>
-	 	</equals>
-	 </condition>
- </animation>
- <animation>
-	 <type>select</type>
-	 <object-name>gsarrow2</object-name>
-	 <object-name>locindex2</object-name>
-	 <object-name>arrow12</object-name>
-	 <object-name>arrow22</object-name>
-	 <object-name>arrow32</object-name>
-	 <object-name>arrow32</object-name>
-	 <condition>
-		 <equals>
-			 <property>instrumentation/enav[0]/selected</property>
-			 <value>1</value>
-	 	</equals>
-	 </condition>
- </animation>
- <animation>
-	 <type>select</type>
-	 <object-name>arrow4</object-name>
-	 <object-name>arrow42</object-name>
-	 <condition>
-		 <equals>
-			 <property>instrumentation/enav[0]/selected</property>
-			 <value>2</value>
-		 </equals>
-	 </condition>
- </animation>
- <animation>
-	 <type>select</type>
-	 <object-name>tacanetadot</object-name>
-	 <object-name>tacaneta4</object-name>
-	 <object-name>tacaneta3</object-name>
-	 <object-name>tacaneta2</object-name>	 
-	 <object-name>tacaneta1</object-name>
-	 <object-name>tacaneta</object-name>
-	 <condition>
-		 <equals>
-			 <property>instrumentation/enav[0]/selected</property>
-			 <value>3</value>
-		 </equals>
-	 </condition>
- </animation>
- <animation>
-	 <type>select</type>
-	 <object-name>arrow5</object-name>
-	 <object-name>tacanid1</object-name>
-	 <object-name>tacanid2</object-name>
-	 <object-name>tacanid3</object-name>
-	 <object-name>tacanid4</object-name>
-	 <object-name>tacanid5</object-name>
-	 <object-name>tacanid6</object-name>
-	 <object-name>tacanid7</object-name>
-	 <object-name>tacanid8</object-name>
-	 <object-name>tacanid9</object-name>
-	 <object-name>tacanid10</object-name>
-	 <object-name>tacanid11</object-name>
-	 <object-name>tacanid12</object-name>
-	 <object-name>tacanid13</object-name>
-	 <object-name>tacanid14</object-name>
-	 <object-name>tacanid15</object-name>
-	 <condition>
-		 <equals>
-			 <property>instrumentation/enav[0]/selected</property>
-			 <value>3</value>
-		 </equals>
-	 </condition>
- </animation> 
- <animation>
-  <type>select</type>
-  <object-name>vorllabel</object-name>
-  <condition>
-  <and>
-    <not>
+  <!--
+  <animation>
+    <type>select</type>
+    <object-name>Menu</object-name>
+    <condition>   
       <equals>
         <property>instrumentation/enav[0]/selected</property>
+        <value>4</value>
+      </equals>
+    </condition>
+  </animation>
+  -->
+	<animation>
+    <object-name>rose</object-name>
+    <object-name>tacandme</object-name>
+    <object-name>tacandme4</object-name>
+    <object-name>tacandme3</object-name>	 
+    <object-name>tacandme2</object-name>
+    <object-name>tacandme1</object-name>
+    <object-name>tacanlabel</object-name>
+    <object-name>hdglabel</object-name>
+    <object-name>hdg3</object-name>
+    <object-name>hdg2</object-name>
+    <object-name>hdg1</object-name>
+    <object-name>gsindex</object-name> 
+    <object-name>navidr4</object-name>	 
+    <object-name>navidr3</object-name>
+    <object-name>navidr2</object-name>	 
+    <object-name>navidr1</object-name>
+    <object-name>dmerlabel</object-name>
+    <object-name>navidl4</object-name>	 
+    <object-name>navidl3</object-name>
+    <object-name>navidl2</object-name>	 
+    <object-name>navidl1</object-name>
+    <object-name>dmellabel</object-name> 
+    <object-name>dmel4</object-name> 
+    <object-name>dmel3</object-name> 
+    <object-name>dmel2</object-name> 
+    <object-name>dmel1</object-name> 
+    <object-name>bug</object-name>
+    <object-name>gsarrow</object-name>
+    <object-name>locindex</object-name>
+    <object-name>arrow1</object-name>
+    <object-name>arrow2</object-name>
+    <object-name>arrow3</object-name>
+    <object-name>arrow3</object-name>
+    <object-name>gsarrow2</object-name>
+    <object-name>locindex2</object-name>
+    <object-name>arrow12</object-name>
+    <object-name>arrow22</object-name>
+    <object-name>arrow32</object-name>
+    <object-name>arrow32</object-name>
+    <object-name>arrow4</object-name>
+    <object-name>arrow42</object-name>
+    <object-name>tacanetadot</object-name>
+    <object-name>tacaneta4</object-name>
+    <object-name>tacaneta3</object-name>
+    <object-name>tacaneta2</object-name>	 
+    <object-name>tacaneta1</object-name>
+    <object-name>tacaneta</object-name>
+    <object-name>arrow5</object-name>
+    <object-name>tacanid1</object-name>
+    <object-name>tacanid2</object-name>
+    <object-name>tacanid3</object-name>
+    <object-name>tacanid4</object-name>
+    <object-name>tacanid5</object-name>
+    <object-name>tacanid6</object-name>
+    <object-name>tacanid7</object-name>
+    <object-name>tacanid8</object-name>
+    <object-name>tacanid9</object-name>
+    <object-name>tacanid10</object-name>
+    <object-name>tacanid11</object-name>
+    <object-name>tacanid12</object-name>
+    <object-name>tacanid13</object-name>
+    <object-name>tacanid14</object-name>
+    <object-name>tacanid15</object-name>
+    <object-name>vorllabel</object-name>
+    <object-name>vorrlabel</object-name>
+    <object-name>ilsllabel</object-name>
+    <object-name>ilsrlabel</object-name>
+    <object-name>bug</object-name>
+	</animation>
+
+	<!-- lighting -->
+	<animation>
+		<type>material</type>
+    <object-name>rose</object-name>
+    <object-name>tacandme</object-name>
+    <object-name>tacandme4</object-name>
+    <object-name>tacandme3</object-name>	 
+    <object-name>tacandme2</object-name>
+    <object-name>tacandme1</object-name>
+    <object-name>tacanlabel</object-name>
+    <object-name>hdglabel</object-name>
+    <object-name>hdg3</object-name>
+    <object-name>hdg2</object-name>
+    <object-name>hdg1</object-name>
+    <object-name>gsindex</object-name> 
+    <object-name>navidr4</object-name>	 
+    <object-name>navidr3</object-name>
+    <object-name>navidr2</object-name>	 
+    <object-name>navidr1</object-name>
+    <object-name>dmerlabel</object-name>
+    <object-name>navidl4</object-name>	 
+    <object-name>navidl3</object-name>
+    <object-name>navidl2</object-name>	 
+    <object-name>navidl1</object-name>
+    <object-name>dmellabel</object-name> 
+    <object-name>dmel4</object-name> 
+    <object-name>dmel3</object-name> 
+    <object-name>dmel2</object-name> 
+    <object-name>dmel1</object-name> 
+    <object-name>bug</object-name>
+    <object-name>gsarrow</object-name>
+    <object-name>locindex</object-name>
+    <object-name>arrow1</object-name>
+    <object-name>arrow2</object-name>
+    <object-name>arrow3</object-name>
+    <object-name>arrow3</object-name>
+    <object-name>gsarrow2</object-name>
+    <object-name>locindex2</object-name>
+    <object-name>arrow12</object-name>
+    <object-name>arrow22</object-name>
+    <object-name>arrow32</object-name>
+    <object-name>arrow32</object-name>
+    <object-name>arrow4</object-name>
+    <object-name>arrow42</object-name>
+    <object-name>tacanetadot</object-name>
+    <object-name>tacaneta4</object-name>
+    <object-name>tacaneta3</object-name>
+    <object-name>tacaneta2</object-name>	 
+    <object-name>tacaneta1</object-name>
+    <object-name>tacaneta</object-name>
+    <object-name>arrow5</object-name>
+    <object-name>tacanid1</object-name>
+    <object-name>tacanid2</object-name>
+    <object-name>tacanid3</object-name>
+    <object-name>tacanid4</object-name>
+    <object-name>tacanid5</object-name>
+    <object-name>tacanid6</object-name>
+    <object-name>tacanid7</object-name>
+    <object-name>tacanid8</object-name>
+    <object-name>tacanid9</object-name>
+    <object-name>tacanid10</object-name>
+    <object-name>tacanid11</object-name>
+    <object-name>tacanid12</object-name>
+    <object-name>tacanid13</object-name>
+    <object-name>tacanid14</object-name>
+    <object-name>tacanid15</object-name>
+    <object-name>vorllabel</object-name>
+    <object-name>vorrlabel</object-name>
+    <object-name>ilsllabel</object-name>
+    <object-name>ilsrlabel</object-name>
+    <object-name>bug</object-name>
+		<emission>
+			<!-- <factor-prop>controls/VDI/brightness</factor-prop> -->
+      <!-- <red>   0.0 </red>   -->
+      <!-- <green> 0.9 </green> -->
+      <!-- <blue>  0.0 </blue>  -->
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+		</emission>
+	</animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>rose</object-name>
+    <object-name>tacandme</object-name>
+    <object-name>tacandme4</object-name>
+    <object-name>tacandme3</object-name>	 
+    <object-name>tacandme2</object-name>
+    <object-name>tacandme1</object-name>
+    <object-name>tacanlabel</object-name>
+    <object-name>hdglabel</object-name>
+    <object-name>hdg3</object-name>
+    <object-name>hdg2</object-name>
+    <object-name>hdg1</object-name>
+    <object-name>gsindex</object-name> 
+    <object-name>navidr4</object-name>	 
+    <object-name>navidr3</object-name>
+    <object-name>navidr2</object-name>	 
+    <object-name>navidr1</object-name>
+    <object-name>dmerlabel</object-name>
+    <object-name>navidl4</object-name>	 
+    <object-name>navidl3</object-name>
+    <object-name>navidl2</object-name>	 
+    <object-name>navidl1</object-name>
+    <object-name>dmellabel</object-name> 
+    <object-name>dmel4</object-name> 
+    <object-name>dmel3</object-name> 
+    <object-name>dmel2</object-name> 
+    <object-name>dmel1</object-name> 
+    <object-name>bug</object-name>
+    <condition>
+      <not>
+        <equals>
+          <property>instrumentation/enav[0]/selected</property>
           <value>4</value>
-      </equals>
-    </not>
-    <equals>
-      <property>instrumentation/nav[0]/nav-loc</property>
-      <value>false</value>
-    </equals>
-    <property>instrumentation/nav[0]/in-range</property>
-  </and>
-  </condition>
- </animation>
-
- <animation>
-  <type>select</type>
-  <object-name>vorrlabel</object-name>
-  <condition>
-  <and>
-    <not>
+        </equals>
+      </not>
+    </condition>
+  </animation>
+ 
+  <animation>
+    <type>select</type>
+    <object-name>gsarrow</object-name>
+    <object-name>locindex</object-name>
+    <object-name>arrow1</object-name>
+    <object-name>arrow2</object-name>
+    <object-name>arrow3</object-name>
+    <object-name>arrow3</object-name>
+    <condition>   
       <equals>
         <property>instrumentation/enav[0]/selected</property>
-        <value>4</value>
+        <value>0</value>
       </equals>
-    </not>
-    <equals>
-      <property>instrumentation/nav[1]/nav-loc</property>
-      <value>false</value>
-    </equals>
-    <property>instrumentation/nav[1]/in-range</property>
-  </and>
-  </condition>
- </animation>
+    </condition>
+  </animation>
 
- <animation>
-  <type>select</type>
-  <object-name>ilsllabel</object-name>
-  <condition>
-  <and>
-    <not>
+  <animation>
+    <type>select</type>
+    <object-name>gsarrow2</object-name>
+    <object-name>locindex2</object-name>
+    <object-name>arrow12</object-name>
+    <object-name>arrow22</object-name>
+    <object-name>arrow32</object-name>
+    <object-name>arrow32</object-name>
+    <condition>
       <equals>
         <property>instrumentation/enav[0]/selected</property>
-        <value>4</value>
+        <value>1</value>
       </equals>
-    </not>  
-    <property>instrumentation/nav[0]/nav-loc</property>
-    <property>instrumentation/nav[0]/in-range</property>
-  </and>
-  </condition>
- </animation>
+    </condition>
+  </animation>
 
- <animation>
-  <type>select</type>
-  <object-name>ilsrlabel</object-name>
-  <condition>
-  <and>
-    <not>
+  <animation>
+    <type>select</type>
+    <object-name>arrow4</object-name>
+    <object-name>arrow42</object-name>
+    <condition>
       <equals>
         <property>instrumentation/enav[0]/selected</property>
-        <value>4</value>
+        <value>2</value>
       </equals>
-    </not>  
-    <property>instrumentation/nav[1]/nav-loc</property>
-    <property>instrumentation/nav[1]/in-range</property>
-  </and>
-  </condition>
- </animation>
+    </condition>
+  </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>bug</object-name>
-  <property>autopilot/settings/heading-bug-deg</property>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
- </animation>
+  <animation>
+    <type>select</type>
+    <object-name>tacanetadot</object-name>
+    <object-name>tacaneta4</object-name>
+    <object-name>tacaneta3</object-name>
+    <object-name>tacaneta2</object-name>	 
+    <object-name>tacaneta1</object-name>
+    <object-name>tacaneta</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/enav[0]/selected</property>
+        <value>3</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>arrow5</object-name>
+    <object-name>tacanid1</object-name>
+    <object-name>tacanid2</object-name>
+    <object-name>tacanid3</object-name>
+    <object-name>tacanid4</object-name>
+    <object-name>tacanid5</object-name>
+    <object-name>tacanid6</object-name>
+    <object-name>tacanid7</object-name>
+    <object-name>tacanid8</object-name>
+    <object-name>tacanid9</object-name>
+    <object-name>tacanid10</object-name>
+    <object-name>tacanid11</object-name>
+    <object-name>tacanid12</object-name>
+    <object-name>tacanid13</object-name>
+    <object-name>tacanid14</object-name>
+    <object-name>tacanid15</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/enav[0]/selected</property>
+        <value>3</value>
+      </equals>
+    </condition>
+  </animation> 
+
+  <animation>
+    <type>select</type>
+    <object-name>vorllabel</object-name>
+    <condition>
+      <and>
+        <not>
+          <equals>
+            <property>instrumentation/enav[0]/selected</property>
+            <value>4</value>
+          </equals>
+        </not>
+        <equals>
+          <property>instrumentation/nav[0]/nav-loc</property>
+          <value>false</value>
+        </equals>
+        <property>instrumentation/nav[0]/in-range</property>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>vorrlabel</object-name>
+    <condition>
+      <and>
+        <not>
+          <equals>
+            <property>instrumentation/enav[0]/selected</property>
+            <value>4</value>
+          </equals>
+        </not>
+        <equals>
+          <property>instrumentation/nav[1]/nav-loc</property>
+          <value>false</value>
+        </equals>
+        <property>instrumentation/nav[1]/in-range</property>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+   <type>select</type>
+   <object-name>ilsllabel</object-name>
+   <condition>
+     <and>
+       <not>
+         <equals>
+           <property>instrumentation/enav[0]/selected</property>
+           <value>4</value>
+         </equals>
+       </not>  
+       <property>instrumentation/nav[0]/nav-loc</property>
+       <property>instrumentation/nav[0]/in-range</property>
+     </and>
+   </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>ilsrlabel</object-name>
+    <condition>
+      <and>
+        <not>
+          <equals>
+            <property>instrumentation/enav[0]/selected</property>
+            <value>4</value>
+          </equals>
+        </not>  
+        <property>instrumentation/nav[1]/nav-loc</property>
+        <property>instrumentation/nav[1]/in-range</property>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bug</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
  <!--++++++++++++++ TACAN +++++++++++++++++++++-->
  <animation>
 	 <type>rotate</type>
@@ -549,8 +709,9 @@
 		 <z>0</z>
 	 </axis>
  </animation>
-<!--+++++++++++++++ Nav1+2 ++++++++++++++++++++-->
-<animation>
+
+ <!--+++++++++++++++ Nav1+2 ++++++++++++++++++++-->
+ <animation>
 	<type>rotate</type>
 	<object-name>arrow4</object-name>
 	<property>orientation/heading-magnetic-deg</property>
@@ -590,7 +751,8 @@
 		 <z>0</z>
 	 </axis>
  </animation>
-<!--+++++++++++++++ NAV1 ++++++++++++++++++++-->
+
+ <!--+++++++++++++++ NAV1 ++++++++++++++++++++-->
  <animation>
   <type>rotate</type>
   <object-name>locindex</object-name>
@@ -706,6 +868,7 @@
    <z>1</z>
   </axis>
  </animation>
+
  <!--+++++++++++++++ NAV2 ++++++++++++++++++++ -->
  <animation>
 	 <type>rotate</type>
@@ -813,8 +976,7 @@
 	 </axis>
  </animation>
  
- <!-- +++++++++++++ DME ++++++++++++-->
- 
+ <!-- +++++++++++++ DME ++++++++++++--> 
  <animation>
   <type>textranslate</type>
   <object-name>dmel1</object-name>
@@ -1022,30 +1184,18 @@
   </axis>
  </animation>
 
- <animation>
-  <type>textranslate</type>
-  <object-name>hdg3</object-name>
-  <property>orientation/heading-magnetic-deg</property>
-  <factor>0.001</factor>
-  <step>100</step>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-	<!-- lighting -->
-	<animation>
-		<object-name>Enav</object-name>
-		<type>material</type>
-		<emission>
-			<factor-prop>controls/VDI/brightness</factor-prop>
-			<red>0.0</red>
-			<green>0.9</green>
-			<blue>0.0</blue>
-		</emission>
-	</animation>
-
+  <animation>
+    <type>textranslate</type>
+    <object-name>hdg3</object-name>
+    <property>orientation/heading-magnetic-deg</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
 
 </PropertyList>
+

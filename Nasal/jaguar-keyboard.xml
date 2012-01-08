@@ -35,7 +35,35 @@
     </binding>
   </key>
 
+  <key n="56">
+        <name>8</name>
+        <desc>AIM-9 sidewinder (unguided)</desc>
+        <binding>
+          <command>nasal</command>
+          <script>setprop("/controls/armament/trigger1", 1)</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>setprop("/controls/armament/trigger1", 0)</script>
+          </binding>
+        </mod-up>
+      </key>
   
+     	<key n="57">
+        <name>9</name>
+        <desc>MK-82 bomb</desc>
+        <binding>
+          <command>nasal</command>
+          <script>setprop("/controls/armament/trigger2", 1)</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>setprop("/controls/armament/trigger2", 0)</script>
+          </binding>
+        </mod-up>
+      </key>
 
 
 </PropertyList>

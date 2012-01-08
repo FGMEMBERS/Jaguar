@@ -5,49 +5,59 @@
   <path>flash.ac</path>
 
   <animation>
+    <!-- Objets opaques -->
+
+    <!-- Objets transparents -->
+    <object-name>flash</object-name>
+  </animation>
+
+  <animation>
     <type>noshadow</type>
-    <object-name>Light</object-name>
+    <object-name>flash</object-name>
   </animation>
 
   <animation>
-    <type>alpha-test</type>
-    <alpha-factor>0.01</alpha-factor>
+    <type>flash</type>
+    <object-name>flash</object-name>
+    <center>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <power>2</power>
+    <factor>2</factor>
+    <offset>0</offset>
+    <two-sides type="bool">false</two-sides>
+    <min>0.5</min>
+    <max>2</max>
   </animation>
 
-  <animation>
-    <type>billboard</type>
-    <object-name>Light</object-name>
-    <spherical type="bool">true</spherical>
-  </animation>
+<animation>
+<type>dist-scale</type>
+<object-name>flash</object-name>
+<interpolation>
+<entry>
+<ind>0</ind>
+<dep>3</dep>
+</entry>
+<entry>
+<ind>20</ind>
+<dep>3</dep>
+</entry>
+</interpolation>
+</animation>
 
-  <animation>
-    <type>material</type>
-    <object-name>Light</object-name>
-    <emission>
-      <red>   1.0 </red>
-      <green> 1.0 </green>
-      <blue>  1.0 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
-    </emission>
-  </animation>
-
-  <animation>
-    <type>dist-scale</type>
-    <object-name>Light</object-name>
-    <interpolation>
-      <entry><ind>    0 </ind><dep> 0.25 </dep></entry>
-      <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
-      <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
-    </interpolation>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>Light</object-name>
-    <condition>
-      <property>controls/lighting/landing-lights</property>
-    </condition>
-  </animation>
+<animation>
+<type>select</type>
+<object-name>flash</object-name>
+<condition>
+<property>controls/lighting/landing-lights</property>
+</condition>
+</animation>
 
 </PropertyList>
-

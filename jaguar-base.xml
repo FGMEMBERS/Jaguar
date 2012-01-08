@@ -28,7 +28,7 @@
     <hud>
       <path n="1">Aircraft/Jaguar/Hud/hud.xml</path>
       <visibility n="1">true</visibility>
-      <palette>
+	    <palette>
         <color n="0">
           <alpha type="float">0.85</alpha>
           <antialiased type="bool">true</antialiased>
@@ -79,20 +79,22 @@
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int type="int" n="0">  0 </int>                                      <!-- 0 immat -->
-        <int type="int" n="1">  0 </int>                                      <!-- 1 immat -->
-        <int type="int" n="2">  0 </int>                                      <!-- 2 immat -->
-        <int type="int" n="3">  0 </int>                                      <!-- 3 immat -->
-        <int type="int" n="4">  0 </int>                                      <!-- 4 immat -->
-        <int type="int" n="5">  0 </int>                                      <!-- 5 immat -->
-        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
-        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
-        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
-        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
-        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
-        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>  
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
+        <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
+        <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
+        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
 
@@ -532,17 +534,14 @@
       <tank n="5">
         <name>left-Tank</name>
         <selected type="bool">false</selected>
-        <level-gal_us>120</level-gal_us>
       </tank>
       <tank n="6">
         <name>Center-tank</name>
         <selected type="bool">false</selected>
-        <level-gal_us>120</level-gal_us>
       </tank>
       <tank n="7">
         <name>right-Tank</name>
         <selected type="bool">false</selected>
-        <level-gal_us>120</level-gal_us>
       </tank>
     </fuel>
   </consumables>
@@ -557,11 +556,11 @@
       <file>Aircraft/Jaguar/Nasal/doors.nas</file>
       <file>Aircraft/Jaguar/Nasal/Jaguar2.nas</file>
     </jaguar>
-	<!--
+    <!--
     <Jag_hud>
       <file>Aircraft/Jaguar/Nasal/hud.nas</file>
     </Jag_hud>
-	-->
+    -->
     <low>
       <file>Aircraft/Jaguar/Nasal/low.nas</file>
     </low>
@@ -569,20 +568,18 @@
       <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
       <file>Aircraft/Jaguar/Nasal/revi.nas</file>
     </guns>
+		<chronograph>
+			<file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/clock/chronograph.nas</file>
+		</chronograph>
     <aar> 
       <file>Aircraft/Generic/aar.nas</file>
     </aar>
-    <rwr>
-      <!-- <file>Aircraft/Instruments-3d/rwr/rwr.nas</file> -->
-      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
-    </rwr>
-    <!--
     <radardist>
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
     </radardist>
-     -->
     <radar>
-      <file>Aircraft/Jaguar/Models/Interior/Panel/Instruments/Radar/radar.nas</file> 
+      <file>Aircraft/Jaguar/Nasal/radar.nas</file> 
+      <file>Aircraft/Jaguar/Nasal/rwr.nas</file>
     </radar>
     <enav>
       <file>Aircraft/Jaguar/Nasal/enav.nas</file>
@@ -591,9 +588,9 @@
       <file>Aircraft/Jaguar/Nasal/tfs.nas</file>
     </tfs>
     <weapons>
-      <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
-      <file>Aircraft/Jaguar/Nasal/guide_to_target.nas</file>
-      <file>Aircraft/Jaguar/Nasal/oso_target.nas</file>
+       <file>Aircraft/Jaguar/Nasal/weapons.nas</file>
+       <file>Aircraft/Jaguar/Nasal/guide_to_target.nas</file>
+       <file>Aircraft/Jaguar/Nasal/oso_target.nas</file>
     </weapons>	
   </nasal>
 

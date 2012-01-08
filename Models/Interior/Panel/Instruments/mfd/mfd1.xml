@@ -1,53 +1,74 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-  <PropertyList> 
-    <path>mfd.ac</path>
+<PropertyList> 
 
- <panel>
-  <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
-  <bottom-left>
-   <x-m>0.02</x-m>
-   <y-m>-0.1</y-m>
-   <z-m>-0.1</z-m>
-  </bottom-left>
-  <bottom-right>
-   <x-m>0.02</x-m>
-   <y-m>0.1</y-m>
-   <z-m>-0.1</z-m>
-  </bottom-right>
-  <top-left>
-   <x-m>0.02</x-m>
-   <y-m>-0.1</y-m>
-   <z-m> 0.1</z-m>
-  </top-left>
- </panel>
+  <path>mfd.ac</path>
 
-	<model>
-		<name>enav</name>
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>tmp</object-name>
+    <object-name>buttonL</object-name>
+    <object-name>switchs</object-name>
+    <object-name>buttonR</object-name>
+    <object-name>contact</object-name>
+    <object-name>C3</object-name>
+    <object-name>C5</object-name>
+    <object-name>R1</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>contact</object-name>
+    <object-name>C3</object-name>
+    <object-name>C5</object-name>
+    <object-name>R1</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <panel>
+    <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
+    <bottom-left>
+      <x-m>  0.02 </x-m>
+      <y-m> -0.10 </y-m>
+      <z-m> -0.10 </z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>  0.02 </x-m>
+      <y-m>  0.10 </y-m>
+      <z-m> -0.10 </z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>  0.02 </x-m>
+      <y-m> -0.10 </y-m>
+      <z-m>  0.10 </z-m>
+    </top-left>
+  </panel>
+
+  <model>
+    <name>enav</name>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/enav.xml</path>
     <offsets> 
-      <x-m>0.015</x-m>
-      <y-m>-0.001</y-m>
-      <z-m>0.006</z-m>
-
+      <x-m>  0.015 </x-m>
+      <y-m> -0.001 </y-m>
+      <z-m>  0.006 </z-m>
     </offsets>
-	</model>
+  </model>
 
-	<animation>
-	  <type>scale</type>
-	  <object-name>enav</object-name>
+  <animation>
+    <type>scale</type>
+    <object-name>enav</object-name>
+    <x-factor> 1.0 </x-factor>
+    <x-offset> 1.0 </x-offset>
+    <y-factor> 1.0 </y-factor>
+    <y-offset> 1.4 </y-offset>
+    <z-factor> 1.0 </z-factor>
+    <z-offset> 1.4 </z-offset>
+  </animation>
 
-	  <x-factor>1.0</x-factor>
-	  <x-offset>1.0</x-offset>
-	  <y-factor>1.0</y-factor>
-	  <y-offset>1.4</y-offset>
-	  <z-factor>1.0</z-factor>
-	  <z-offset>1.4</z-offset>
-	  <center>
-	   <x-m>0.0</x-m>
-	   <y-m>0.0</y-m>
-	   <z-m>0.0</z-m>
-	  </center>
-	 </animation>
+</PropertyList>
 
-  </PropertyList>
