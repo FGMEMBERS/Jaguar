@@ -67,7 +67,7 @@ var chuteAngle = func {
 
 	var speed = getprop('velocities/airspeed-kt');
 	var aircraftpitch = getprop('orientation/pitch-deg[0]');
-	var aircraftyaw = getprop('orientation/side-slip-deg');
+	var aircraftyaw = -getprop('orientation/side-slip-deg'); <!-- inverted after a change in side-slip sign (bug #901) -->
 	var chuteyaw = getprop("sim/model/lightning/orientation/chute_yaw");
 	var aircraftroll = getprop('orientation/roll-deg');
 
