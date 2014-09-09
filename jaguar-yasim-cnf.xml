@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+************************************************************************
+Jaguar simulation config.
+
+2008-05-26 BARANGER Emmanuel
+2010-09    StuartC
+2011       StuartC, Armchair Ace
+************************************************************************
+-->
+
+<PropertyList include="jaguar-base.xml">
+
+  <sim>
+
+    <description>Jaguar (YASim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>jaguar-yasim</aero>
+
+    <author>BARANGER Emmanuel, StuartC, Armchair Ace</author>
+    <aircraft-version>0.2</aircraft-version>
+    <status>2.4 Alpha</status>
+
+  </sim>
+
+</PropertyList>

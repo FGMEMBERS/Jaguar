@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <key n="101">
+    <name>e</name>
+    <desc>Guns</desc>
+    <binding>
+      <command>nasal</command>
+      <script>guns.fire_MG()</script>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>nasal</command>
+        <script>guns.stop_MG()</script>
+      </binding>
+    </mod-up>
+  </key>
+
+  <key n="68">
+    <name>D</name>
+    <desc>Passenger door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.doorsystem.passengerexport();</script>
+    </binding>
+  </key>
+
+   <key n="100">
+    <name>d</name>
+    <desc>Crew door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.doorsystem.crewexport();</script>
+    </binding>
+  </key>
+
+  <key n="56">
+        <name>8</name>
+        <desc>AIM-9 sidewinder (unguided)</desc>
+        <binding>
+          <command>nasal</command>
+          <script>setprop("/controls/armament/trigger1", 1)</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>setprop("/controls/armament/trigger1", 0)</script>
+          </binding>
+        </mod-up>
+      </key>
+  
+     	<key n="57">
+        <name>9</name>
+        <desc>MK-82 bomb</desc>
+        <binding>
+          <command>nasal</command>
+          <script>setprop("/controls/armament/trigger2", 1)</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>setprop("/controls/armament/trigger2", 0)</script>
+          </binding>
+        </mod-up>
+      </key>
+
+
+</PropertyList>
+
