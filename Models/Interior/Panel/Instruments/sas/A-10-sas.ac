@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.2 0.2 0.2 shi 128 trans 0
-MATERIAL "ac3dmat1.001" rgb 0.533 0.537 0.518 amb 0.529333 0.529333 0.529333 emis 0 0 0 spec 0.878 0.878 0.867 shi 90 trans 0
+MATERIAL "ac3dmat1.001" rgb 0.533 0.537 0.518 amb 0.533 0.537 0.518 emis 0 0 0 spec 0.878 0.878 0.867 shi 90 trans 0
 MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0 0 0 spec 0 0 0 shi 10 trans 0
 OBJECT world
 kids 1
@@ -12,7 +12,7 @@ OBJECT poly
 name "monitor-test-switch"
 data 8
 Mesh.002
-texture "A-10-sas.rgb"
+texture "A-10-sas.png"
 texrep 1 1
 crease 80.000000
 numvert 67
@@ -485,7 +485,7 @@ OBJECT poly
 name "mount"
 data 8
 Mesh.001
-texture "A-10-sas.rgb"
+texture "A-10-sas.png"
 texrep 1 1
 crease 45.000000
 numvert 186
@@ -2069,7 +2069,7 @@ OBJECT poly
 name "pitch-L-switch"
 data 8
 Mesh.007
-texture "A-10-sas.rgb"
+texture "A-10-sas.png"
 texrep 1 1
 crease 80.000000
 numvert 17
@@ -2200,7 +2200,7 @@ OBJECT poly
 name "pitch-R-switch"
 data 8
 Mesh.006
-texture "A-10-sas.rgb"
+texture "A-10-sas.png"
 texrep 1 1
 crease 80.000000
 numvert 17
@@ -2331,7 +2331,7 @@ OBJECT poly
 name "to-trim-button"
 data 4
 Mesh
-texture "A-10-sas.rgb"
+texture "A-10-sas.png"
 texrep 1 1
 crease 53.000000
 numvert 49
@@ -2748,7 +2748,7 @@ OBJECT poly
 name "yaw-L-switch"
 data 8
 Mesh.003
-texture "A-10-sas.rgb"
+texture "A-10-sas.png"
 texrep 1 1
 crease 80.000000
 numvert 17
@@ -2879,7 +2879,7 @@ OBJECT poly
 name "yaw-R-switch"
 data 8
 Mesh.004
-texture "A-10-sas.rgb"
+texture "A-10-sas.png"
 texrep 1 1
 crease 80.000000
 numvert 17

@@ -14,6 +14,11 @@
       <entry><ind>  400 </ind><dep> 10.00 </dep></entry>
       <entry><ind> 5000 </ind><dep>  0.00 </dep></entry>
     </interpolation>
+	  <attach>world</attach>
+
+  <placer>
+   <type>point</type>
+  </placer>
   </animation>
 
 </PropertyList>

@@ -11,7 +11,7 @@ kids 13
 OBJECT poly
 name "mount"
 loc -2.98079 -1.2038 0.0140587
-texture "A-10-nav-mode-selector-mount.rgb"
+texture "A-10-nav-mode-selector-mount.png"
 crease 45.000000
 numvert 16
 0 0.024033 0.0667625
@@ -98,7 +98,7 @@ kids 0
 OBJECT poly
 name "homing-light-fm-on"
 loc 0.291185 0.110409 -0.0368226
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 21
 -3.26083 -1.3214 0
@@ -257,7 +257,7 @@ kids 0
 OBJECT poly
 name "homing-light-uhf-on"
 loc 0.273128 0.125629 -0.0368226
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 21
 -3.25959 -1.32525 0.00294067
@@ -416,7 +416,7 @@ kids 0
 OBJECT poly
 name "ptr-switch"
 loc -0.182469 -0.0593005 0.0286031
-texture "A-10-nav-mode-selector-mount.rgb"
+texture "A-10-nav-mode-selector-mount.png"
 crease 45.000000
 numvert 17
 -2.77822 -1.13402 -1.95578e-08
@@ -657,7 +657,7 @@ kids 0
 OBJECT poly
 name "homing-light-fm-off"
 loc 0.291311 0.110409 -0.0368115
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 21
 -3.2608 -1.32531 0.00294067
@@ -816,7 +816,7 @@ kids 0
 OBJECT poly
 name "homing-light-uhf-off"
 loc 0.290071 0.125629 -0.0367884
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 21
 -3.25963 -1.32134 0

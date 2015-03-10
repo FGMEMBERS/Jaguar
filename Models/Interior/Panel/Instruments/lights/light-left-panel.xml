@@ -4,7 +4,7 @@
 
 	<path>light-left-panel.ac</path>
 
-	<!-- collision-switch -->
+	<!-- collision-switch 
 	<animation>
 		<object-name>collision-switch</object-name>
 		<type>rotate</type>
@@ -24,29 +24,34 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
+-->
 	<!-- taxi/probe-switch -->
-	<animation>
-		<object-name>taxi-probe-switch</object-name>
-		<type>rotate</type>
-		<property>controls/lighting/taxi-light</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>-10</dep></entry>
-			<entry><ind>1</ind><dep>25</dep></entry>
-		</interpolation>
-		<center>
-			<x-m>-0.0146</x-m>
-			<y-m>-0.0423</y-m>
-			<z-m>-0.0010</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
-	</animation>
+		<model>
+		<name>Landing lights</name>
+    <path>Aircraft/F-15C/Models/Interior/Panel/Instruments/lights/landing-lights.xml</path>
+    <offsets> 
+      <x-m>-0.015</x-m>
+      <y-m>-0.04</y-m>
+      <z-m>0.0</z-m>
+	  <pitch-deg>-90</pitch-deg>
 
-	<!-- pylon-switch -->
+    </offsets>
+	</model>
+	
+	<animation>
+    <type>select</type>
+    <object-name>NoseGearLandinglight</object-name>
+    <object-name>Taxi-Light-Left</object-name>
+         
+    <condition>
+      <equals>
+        <property>controls/switches/landing-light</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation> 
+
+	<!-- pylon-switch 
 	<animation>
 		<object-name>pylon-switch</object-name>
 		<type>rotate</type>
@@ -67,8 +72,8 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
-	<!-- instrument-wheel -->
+-->
+	<!-- instrument-wheel 
 	<animation>
 		<type>rotate</type>
 		<object-name>instrument-wheel</object-name>
@@ -128,8 +133,8 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
-	<!-- tail-switch -->
+-->
+	<!-- tail-switch 
 	<animation>
 		<object-name>tail-switch</object-name>
 		<type>rotate</type>
@@ -150,8 +155,8 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
-	<!-- wing-switch -->
+-->
+	<!-- wing-switch 
 	<animation>
 		<object-name>wing-switch</object-name>
 		<type>rotate</type>
@@ -172,8 +177,8 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
-	<!-- formation-switch -->
+-->
+	<!-- formation-switch 
 	<animation>
 		<object-name>formation-switch</object-name>
 		<type>rotate</type>
@@ -194,8 +199,8 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
-	<!-- flood-switch -->
+-->
+	<!-- flood-switch 
 	<animation>
 		<object-name>flood-switch</object-name>
 		<type>rotate</type>
@@ -216,8 +221,8 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
-	<!-- lighting -->
+-->
+	<!-- lighting 
 	<animation> 
 		<object-name>mount</object-name>
 		<type>material</type>
@@ -334,7 +339,7 @@
 		<object-name>light-left-panel</object-name>
 		<type>noshadow</type>
 	</animation>
-
+-->
 
 	<!-- LoD -->
 	<animation>

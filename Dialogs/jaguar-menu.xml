@@ -13,15 +13,13 @@
           <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
-<!--
-      <item>
-        <label>Immatriculation</label>
+<item n="1">
+        <label>Reload Gun</label>
         <binding>
           <command>nasal</command>
-          <script>xf11.immat_dialog.toggle()</script>
+          <script>guns.reload_Cannon()</script>
         </binding>
       </item>
--->
     </menu>
   </default>
 

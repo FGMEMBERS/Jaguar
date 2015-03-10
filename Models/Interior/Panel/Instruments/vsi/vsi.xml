@@ -3,6 +3,12 @@
 <PropertyList>
 
   <path>vsi.ac</path>
+  
+   <effect>
+     <inherits-from>Effects/model-transparent</inherits-from>
+      <object-name>vitre.003</object-name>
+	     
+    </effect>
 
   <animation>
     <object-name>fond</object-name>

@@ -6,8 +6,8 @@
   <sim>
 
     <author>BARANGER Emmanuel, StuartC, Armchair Ace</author>
-    <aircraft-version>4.81</aircraft-version>
-    <status>4.81 Alpha</status>
+    <aircraft-version>5.6c</aircraft-version>
+    <status>5.6c Alpha</status>
   
     <rating>
       <FDM type="int">     3 </FDM>

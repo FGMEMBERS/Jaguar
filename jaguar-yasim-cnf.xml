@@ -18,8 +18,8 @@ Jaguar simulation config.
     <aero>jaguar-yasim</aero>
 
     <author>BARANGER Emmanuel, StuartC, Armchair Ace</author>
-    <aircraft-version>0.2</aircraft-version>
-    <status>2.4 Alpha</status>
+    <aircraft-version>5.6c</aircraft-version>
+    <status>5.6c Alpha</status>
 
   </sim>
 

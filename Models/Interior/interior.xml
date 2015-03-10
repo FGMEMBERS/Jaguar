@@ -68,6 +68,19 @@
       <z-m> -0.097 </z-m>
     </offsets>
   </model>
+  
+  <!-- Pilot invisible from internally -->
+
+    <animation>
+        <type>select</type>
+        <object-name>Pilote</object-name>
+		<condition>
+<not>
+            <property>sim/current-view/internal</property>
+</not>
+        </condition>
+    </animation>		
+  
 
   <!-- Canopy -->
   <animation>

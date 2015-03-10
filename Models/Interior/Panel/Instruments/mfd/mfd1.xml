@@ -2,7 +2,7 @@
 
 <PropertyList> 
 
-  <path>mfd.ac</path>
+  <path>bigmfd.ac</path>
 
   <animation>
     <object-name>fond</object-name>
@@ -29,7 +29,7 @@
       <blue>  0.25 </blue>
     </emission>
   </animation>
-
+<!--
   <panel>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/mfd1-hotspots.xml</path>
     <bottom-left>
@@ -48,7 +48,7 @@
       <z-m>  0.10 </z-m>
     </top-left>
   </panel>
-
+-->
   <model>
     <name>enav</name>
     <path>Aircraft/Jaguar/Models/Interior/Panel/Instruments/mfd/enav.xml</path>

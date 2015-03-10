@@ -3,6 +3,9 @@
 <PropertyList include="bombableinclude.xml">
 
   <path>jaguar.ac</path>
+  
+  <!-- MP sound call -->
+  <sound><path>Aircraft/Jaguar/Sounds/mp-sound.xml</path></sound>
 
   <nasal>
     <load>
@@ -67,9 +70,6 @@
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
-    <object-name>trous</object-name>
-    <object-name>lampe</object-name>
-    <object-name>lampesporteA</object-name>
 
     <!-- Objets transparents -->
     <object-name>verriere</object-name>
@@ -116,9 +116,6 @@
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>guns</object-name>
-    <object-name>trous</object-name>
-    <object-name>lampe</object-name>
-    <object-name>lampesporteA</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -153,10 +150,43 @@
     </shininess>
 -->
   </animation>
+  
+   <!-- Bump Map Effect -->
+<effect>
+    <inherits-from>Aircraft/Jaguar/Models/Effects/jag_bumpspec</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>dessus</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>air</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>sorties</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>volets</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>direction</object-name>
+    <object-name>freinG</object-name>
+    <object-name>freinD</object-name>
+    <object-name>porteGH</object-name>
+    <object-name>porteGB</object-name>
+    <object-name>porteDH</object-name>
+    <object-name>porteDB</object-name>
+    <object-name>porteA</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name> 
+    <!--object-name></object-name>
+    <object-name></object-name>
+	<object-name></object-name-->
+ </effect>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <!-- <inherits-from>Aircraft/Jaguar/Models/Effects/BumpMap/bumpmap</inherits-from> -->
     <object-name>fuselage</object-name>
     <object-name>dessus</object-name>
     <object-name>tourverriere</object-name>
@@ -197,9 +227,80 @@
     <type>noshadow</type>
     <object-name>verriere</object-name>
     <object-name>vitres</object-name>
+	<object-name>hud</object-name>
   </animation>
+  
+    <!-- Transparent Surfaces for Rembrandt rendering -->
+   <effect>
+      <inherits-from>Effects/model-transparent</inherits-from>
+       <object-name>intverriere</object-name>
+	     <object-name>intvitres</object-name>
+       <object-name>intverriere</object-name>
+	   <object-name>hud</object-name>
+   </effect>
+   
+  <!-- Suppress in Cockpit View -->
+ <animation>
+  <type>select</type>
+    <object-name>intverriere</object-name>
+	     <object-name>intvitres</object-name>
+       <object-name>intverriere</object-name>
+  <condition>
+   <not>
+   <equals>
+    <property>/sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </not>
+  </condition>
+ </animation>
 
-  <!-- Une ombre pour OSG -->
+
+   <!-- Solid Surfaces for Rembrandt rendering -->
+   <animation>
+    
+   <object-name>fuselage</object-name>
+    <object-name>dessus</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>air</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>sorties</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>volets</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>direction</object-name>
+    <object-name>freinG</object-name>
+    <object-name>freinD</object-name>
+    <object-name>porteGH</object-name>
+    <object-name>porteGB</object-name>
+    <object-name>porteDH</object-name>
+    <object-name>porteDB</object-name>
+    <object-name>porteA</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+
+    <object-name>fuel</object-name>
+    <object-name>postcomb</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>guns</object-name>
+		
+    </animation>
+
+  <!-- Une ombre pour OSG 
   <model>
     <path>Aircraft/Jaguar/Models/shadow.xml</path>
     <offsets>
@@ -208,7 +309,7 @@
       <z-m> -2.07500 </z-m>
     </offsets>
   </model>
-
+-->
   <!-- Armament  -->
   <model>
     <path>Aircraft/Jaguar/Models/weapons/loads.xml</path>
@@ -228,7 +329,7 @@
       <y-m> -0.569 </y-m>
       <z-m> -0.936 </z-m>
       <roll-deg>    0 </roll-deg>
-      <pitch-deg> 180 </pitch-deg>
+      <pitch-deg> 100 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
@@ -241,7 +342,7 @@
       <y-m>  0.569 </y-m>
       <z-m> -0.936 </z-m>
      <roll-deg>    0 </roll-deg>
-      <pitch-deg> 180 </pitch-deg>
+      <pitch-deg> 100 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
@@ -301,9 +402,9 @@
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/flammes/flammesG.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Afterburner/EJ200-L.xml</path>
     <offsets>
-      <x-m>  5.561 </x-m>
+      <x-m>  6.2 </x-m>
       <y-m> -0.483 </y-m>
       <z-m> -0.572 </z-m>
     </offsets>
@@ -311,10 +412,10 @@
 
  <!-- Droite -->
   <model>
-    <path>Aircraft/Jaguar/Models/Effects/flammes/flammesD.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Afterburner/EJ200-R.xml</path>
     <offsets>
-      <x-m>  5.561 </x-m>
-      <y-m>  0.483 </y-m>
+      <x-m>  6.2 </x-m>
+      <y-m>  0.474 </y-m>
       <z-m> -0.572 </z-m>
     </offsets>
   </model>
@@ -517,7 +618,7 @@
   <animation>
     <type>rotate</type>
     <object-name>freinG</object-name>
-    <property>surface-positions/spoiler-pos-norm</property>
+    <property>surface-positions/speedbrake-pos-norm</property>
     <factor> -65 </factor>
     <axis>
       <x1-m>  2.655 </x1-m>
@@ -532,7 +633,7 @@
   <animation>
     <type>rotate</type>
     <object-name>freinD</object-name>
-    <property>surface-positions/spoiler-pos-norm</property>
+    <property>surface-positions/speedbrake-pos-norm</property>
     <factor> 65 </factor>
     <axis>
       <x1-m>  2.655 </x1-m>
@@ -548,7 +649,6 @@
   <animation>
     <type>rotate</type>
     <object-name>porteA</object-name>
-    <object-name>lampesporteA</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
@@ -909,7 +1009,7 @@
 
   <!-- Ajout des effets lumineux -->
   <model>
-    <path>Aircraft/Jaguar/Models/lights/beacon.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Lights/beacon.xml</path>
     <offsets>
       <x-m> 1.300 </x-m>
       <y-m> 0.000 </y-m> 
@@ -918,7 +1018,7 @@
   </model> 
 
   <model>
-    <path>Aircraft/Jaguar/Models/lights/beacon.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Lights/beacon.xml</path>
     <offsets>
       <x-m>  3.626 </x-m>
       <y-m>  0.000 </y-m>
@@ -927,7 +1027,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/lights/RedLight.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Lights/RedLight.xml</path>
     <offsets>
       <x-m>  3.768 </x-m>
       <y-m> -4.392 </y-m>
@@ -936,7 +1036,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/lights/GreenLight.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Lights/GreenLight.xml</path>
     <offsets>
       <x-m>  3.768 </x-m>
       <y-m>  4.392 </y-m>
@@ -945,18 +1045,18 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Lights/StrobeWhite.xml</path>
     <offsets>
-      <x-m>  3.768 </x-m>
+      <x-m>  3.76 </x-m>
       <y-m> -4.390 </y-m>
       <z-m> -0.281 </z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Jaguar/Models/Effects/Lights/StrobeWhite.xml</path>
     <offsets>
-      <x-m>  3.768 </x-m>
+      <x-m>  3.76 </x-m>
       <y-m>  4.390 </y-m>
       <z-m> -0.281 </z-m>
     </offsets>
@@ -964,8 +1064,8 @@
 
   <!-- Taxi light cone -->  
   <model>
-    <path>Aircraft/Jaguar/Models/lights/landinglight.xml</path>
-    <name>NoseGearLandinglightL</name>     
+    <path>Aircraft/Jaguar/Models/Effects/Lights/light-cone.xml</path>
+     
     <offsets>
       <x-m> -4.369 </x-m>
       <y-m> -0.163 </y-m>
@@ -976,47 +1076,18 @@
   </model>
 
   <model>
-    <path>Aircraft/Jaguar/Models/lights/landinglight.xml</path>
-    <name>NoseGearLandinglightR</name>     
+    <path>Aircraft/Jaguar/Models/Effects/Lights/light-cone.xml</path>
+       
     <offsets>
       <x-m> -4.369 </x-m>
       <y-m>  0.163 </y-m>
       <z-m> -1.308 </z-m>
       <pitch-deg>  -10 </pitch-deg>
-      <heading-deg> 10 </heading-deg>     
+      <heading-deg> -10 </heading-deg>     
     </offsets>
   </model>  
   
-  <model>
-    <name>Taxi-Light-Left</name>
-    <path>Aircraft/Jaguar/Models/lights/light-cone.xml</path>
-    <offsets>
-      <x-m>          -4.332 </x-m>
-      <y-m>          -0.163 </y-m>
-      <z-m>          -1.308 </z-m>
-      <pitch-deg>   -10.000 </pitch-deg>
-      <heading-deg>  10.000 </heading-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <name>Taxi-Light-Right</name>
-    <path>Aircraft/Jaguar/Models/lights/light-cone.xml</path>
-    <offsets>
-      <x-m>          -4.332 </x-m>
-      <y-m>           0.163 </y-m>
-      <z-m>          -1.308 </z-m>
-      <pitch-deg>   -10.000 </pitch-deg>
-      <heading-deg> -10.000 </heading-deg>
-    </offsets>
-  </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>Taxi-Light-Left</object-name>
-    <object-name>Taxi-Light-Right</object-name>
-    <object-name>NoseGearLandinglightL</object-name>     
-    <object-name>NoseGearLandinglightR</object-name>     
+ <animation>
     <condition>
       <equals>
         <property>controls/switches/landing-light</property>
@@ -1024,6 +1095,8 @@
       </equals>
     </condition>
   </animation> 
+  
+  
 
   <!-- chute
   <model>
@@ -1096,66 +1169,7 @@
     </axis>
   </animation>
 
-  <!-- Speed Braked -->
-  <!-- Left  
-  <animation>
-    <type>select</type>
-    <object-name>freinG</object-name> 
-    <condition>
-      <greater-than>
-        <property>surface-positions/speedbrake-norm</property>
-        <value>0.0</value>
-      </greater-than>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>freinG</object-name>
-    <property>surface-positions/speedbrake-norm</property>
-    <factor> 60 </factor>
-    <center>
-      <x-m>  2.17 </x-m>
-      <y-m> -1.50 </y-m>
-      <z-m> -0.92 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y>  1 </y>
-      <z> -1 </z>
-    </axis>
-  </animation>
-  -->
-
-  <!-- Right 
-  <animation>
-    <type>select</type>
-    <object-name>freinD</object-name> 
-    <condition>
-      <greater-than>
-        <property>surface-positions/speedbrake-norm</property>
-        <value>0.0</value>
-      </greater-than>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>freinD</object-name>
-    <property>surface-positions/speedbrake-norm</property>
-    <factor>60</factor>
-    <center>
-      <x-m>  2.17 </x-m>
-      <y-m>  1.50 </y-m>
-      <z-m> -0.92 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
- -->
+  
  
   <!-- ******************************************************************* -->
   <!-- FX                                                                  -->
@@ -1163,21 +1177,47 @@
  	<model>
 		<path>Aircraft/Jaguar/Models/Effects/fx/fx.xml</path>
 		<offsets>
-			<x-m> 0.00 </x-m>
+			<x-m> 2.00 </x-m>
 			<y-m> 0.00 </y-m>
-			<z-m> 0.28 </z-m>
+			<z-m> 0.0 </z-m>
 		</offsets>
 	</model> 
 	
 	<model>
-		<path>Aircraft/Jaguar/Models/Effects/fx/fx2.xml</path>
+		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour.xml</path>
 		<offsets>
-			<x-m>0</x-m>
+			<x-m>-2.0</x-m>
 			<y-m>0</y-m>
-			<z-m>0</z-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
 			<pitch-deg>0</pitch-deg>
+			<heading-deg>25</heading-deg>
 		</offsets>
-	</model> 
+	</model>
+ 
+ <model>
+		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour2.xml</path>
+		<offsets>
+			<x-m>2.0</x-m>
+			<y-m>-1.8</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>45</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Jaguar/Models/Effects/Vapour/Vapour2.xml</path>
+		<offsets>
+			<x-m>2.0</x-m>
+			<y-m>1.8</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>-45</heading-deg>
+		</offsets>
+	</model>
  
 </PropertyList>
 

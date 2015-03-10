@@ -110,7 +110,7 @@ OBJECT poly
 name "X-sign"
 data 8
 Mesh.008
-texture "tacan.rgb"
+texture "tacan.png"
 texrep 1 1
 crease 45.000000
 numvert 11
@@ -191,7 +191,7 @@ OBJECT poly
 name "Y-sign"
 data 8
 Mesh.007
-texture "tacan.rgb"
+texture "tacan.png"
 texrep 1 1
 crease 45.000000
 numvert 11
@@ -1884,7 +1884,7 @@ OBJECT poly
 name "mount"
 data 8
 Mesh.002
-texture "tacan.rgb"
+texture "tacan.png"
 texrep 1 1
 crease 80.000000
 numvert 37
@@ -2539,7 +2539,7 @@ OBJECT poly
 name "test-button"
 data 8
 Mesh.016
-texture "tacan.rgb"
+texture "tacan.png"
 texrep 1 1
 crease 45.000000
 numvert 21
@@ -2700,7 +2700,7 @@ OBJECT poly
 name "vol-knob"
 data 8
 Mesh.012
-texture "tacan.rgb"
+texture "tacan.png"
 texrep 1 1
 crease 45.000000
 numvert 21

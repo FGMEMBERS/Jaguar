@@ -528,7 +528,7 @@ OBJECT poly
 name "mount"
 data 8
 Mesh.005
-texture "A-10-ils.rgb"
+texture "A-10-ils.png"
 texrep 1 1
 crease 80.000000
 numvert 36
